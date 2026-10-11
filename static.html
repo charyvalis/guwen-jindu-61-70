@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>古文今讀 61–70 課　「為」「謝」字整理與選擇題</title>
+<title>古文今讀 61–70 課　虛字整理與選擇題</title>
 <style>
   :root {
     --bg: #ffffff; --fg: #1f2a1f; --muted: #6b7280; --accent: #385723; --accent-bg: #e2efda;
@@ -110,7 +110,7 @@
   @media print {
     body { font-size: 12pt; }
     main { max-width: none; padding: 0; }
-    nav.toc, .bar, .exp, .sec-score { display: none !important; }
+    nav.toc, .bar, .exp, .sec-score, .who, .sendmsg { display: none !important; }
     .printonly { display: block; }
     button.opt { border: 0; padding: 0; }
     h2.newpage { page-break-before: always; }
@@ -119,33 +119,99 @@
     .tablewrap { overflow: visible; }
     details.answers { border: none; padding: 0; }
   }
+  .who { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 12px 0 0; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; font-size: .92rem; }
+  .who label { display: inline-flex; align-items: center; gap: 6px; }
+  .who input { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; width: 7em; }
+  .who input.narrow { width: 4.5em; }
+  .sendmsg { flex: 1 0 100%; font-size: .85rem; color: var(--muted); }
+  .sendmsg:empty { display: none; }
+  .lt h4 { margin: 12px 0 2px; color: var(--accent); font-size: 1rem; }
+  .lt p { margin: 2px 0; }
+  .lt .orig { font-size: 1.12rem; line-height: 1.9; }
+  .lt .notes { font-size: .92rem; color: var(--muted); }
 
-  .poem { text-align: center; margin: 8px 0 12px; font-size: 1.15rem; line-height: 1.9; }
-  .poem p { margin: 0; }
-  .poem .hl { font-size: 1.5rem; }
+  .banner { background: linear-gradient(135deg, #ff922b, #f06595); color: #fff; border-radius: 14px; padding: 16px 18px 14px; margin: 10px 0 6px; text-align: center; }
+  .banner h1 { color: #fff; margin: 0 0 2px; }
+  .banner .subtitle { color: #fff; margin: 0 0 6px; }
+  .banner .lessons-line, .banner .legend { color: #fff; opacity: .92; }
+  .banner .legend a { color: #fff; text-decoration: underline; }
+  .lesson-block {
+    --c: #e8590c;
+    border-left: 6px solid var(--c); border-radius: 10px;
+    padding: 2px 16px 14px; margin: 24px 0 18px;
+    background: color-mix(in srgb, var(--c) 7%, var(--bg));
+  }
+  .lesson-block h3.lesson {
+    background: var(--c); color: #fff; margin: 10px -16px 10px; padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+  }
+  .lesson-block h3.lesson small { color: #fff; opacity: .88; }
+  .lesson-block .lt h4 { color: var(--c); }
+  .lesson-block .lt .notes { background: color-mix(in srgb, var(--c) 6%, var(--bg)); padding: 4px 8px; border-radius: 6px; }
+  .lesson-block .q { break-inside: avoid; }
+  .zi-block {
+    --c: #e67700;
+    border-left: 6px solid var(--c); border-radius: 10px;
+    padding: 2px 16px 16px; margin: 24px 0; background: color-mix(in srgb, var(--c) 6%, var(--bg));
+  }
+  .zi-block h2 { color: var(--c); border-bottom-color: var(--c); }
+  .zi-block h3 { color: var(--c); }
+  .zi-block table.meaning thead th { background: color-mix(in srgb, var(--c) 20%, var(--bg)); }
+  @media print {
+    .banner { background: none !important; color: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .banner h1, .banner .subtitle, .banner .lessons-line, .banner .legend { color: #000 !important; }
+    .lesson-block, .zi-block { background: none !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .lesson-block h3.lesson { background: none !important; color: var(--c) !important; border-bottom: 2px solid var(--c); }
+  }
+
+  table.idiom tbody tr.grp th { background: color-mix(in srgb, #f08c00 16%, var(--bg)); color: #b35c00; text-align: left; font-size: .92rem; padding-top: 8px; padding-bottom: 8px; }
+  table.idiom tbody th[scope="row"] { width: 10.5em; background: var(--row); text-align: center; white-space: normal; }
+
+  .idiom-list { margin-top: 6px; }
+  .idiom-group { color: #b35c00; background: color-mix(in srgb, #f08c00 16%, var(--bg)); padding: 6px 12px; border-radius: 6px; margin: 18px 0 8px; font-size: 1rem; }
+  .idiom-card { display: flex; gap: 10px; align-items: flex-start; border: 1px solid var(--line); border-left: 4px solid #f08c00; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .idiom-no { flex: 0 0 auto; width: 1.6em; height: 1.6em; line-height: 1.6em; text-align: center; border-radius: 50%; background: #f08c00; color: #fff; font-size: .82rem; font-weight: bold; font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif; }
+  .idiom-term { font-weight: bold; font-size: 1.1rem; color: #b35c00; margin-bottom: 4px; }
+  .idiom-def { font-size: .97rem; line-height: 1.75; }
+
+  .dl-list { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .dl-card { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; text-decoration: none; color: var(--fg); }
+  .dl-card:hover { background: var(--row); }
+  .dl-icon { font-size: 1.6rem; }
+  .dl-text { display: flex; flex-direction: column; }
+  .dl-title { font-weight: bold; }
+  .dl-sub { font-size: .82rem; color: var(--muted); }
 </style>
 </head>
 <body>
 <main>
+<div class="banner">
 <h1>古文今讀 第 61–70 課</h1>
 <p class="subtitle">整理：為（ㄨㄟˋ／ㄨㄟˊ）、謝（複習）、使動／意動／為動用法</p>
 <p class="lessons-line">第61課 畫鬼最易　第62課 一字師　第63課 楚弓楚得　第64課 醜女效顰　第65課 宣王好射　第66課 王勃腹稿　第67課 一舉兩得　第68課 割雞焉用牛刀　第69課 石學士　第70課 嗟來之食</p>
-<p class="legend">出處：課本標註＝課本注釋與老師註記、補充投影片；原文＝課文內容；補充＝整理時另加的用法</p>
-<p class="legend"><a href="index.html">前往互動版（可直接點選作答）</a>｜講義版（可列印）　｜　<a href="古文今讀61-70.docx">下載 Word 檔</a></p>
+<p class="legend">出處：課本標註＝課本旁註所列；原文＝課文內容；補充＝整理時另加的用法</p>
+<p class="legend">講義版（與 Word 檔相同，適合閱讀與列印）｜<a href="./">前往互動版</a></p>
+</div>
 <nav class="toc" aria-label="目錄">
-<a href="#handout">虛字整理</a><a href="#idioms">成語整理</a><a href="#notes">各課重點</a><a href="#practice">虛字練習</a><a href="#lessonqs">課文選擇題</a><a href="#answers">參考答案</a>
+<a href="#handout">虛字整理</a><a href="#practice">虛字練習</a><a href="#lessonqs">課文與選擇題</a><a href="#idioms">成語</a><a href="#answers">參考答案</a><a href="#downloads">下載 Word</a>
 </nav>
-
 <section id="handout">
-<h2>一、為　ㄨㄟˋ（去聲，第61～70課）</h2>
+<div class="zi-block" style="--c:#e67700">
+<h2 id="h-1">一、為　ㄨㄟˋ（去聲，第61～70課）</h2>
 <div class="tablewrap"><table class="meaning orange"><thead><tr><th>意義（詞性）</th><th>例句（出處）</th></tr></thead><tbody><tr><th scope="row">介，因為</th><td><div class="ex">項「為」之強<span class="src">（第62課，補充）</span></div><div class="ex">「為」之怡然稱快<span class="src">（補充）</span></div></td></tr><tr><th scope="row">介，替</th><td><div class="ex">「為」民服務<span class="src">（補充）</span></div><div class="ex">「為」國增光<span class="src">（補充）</span></div></td></tr><tr><th scope="row">介，與、同</th><td><div class="ex">道不同不相「為」謀<span class="src">（補充）</span></div></td></tr><tr><th scope="row">介，對、向</th><td><div class="ex">此中人語云，不足「為」外人道也<span class="src">（補充）</span></div></td></tr><tr><th scope="row">介，表示行動的目的</th><td><div class="ex">「為」正義而戰<span class="src">（補充）</span></div></td></tr><tr><th scope="row">（成語）為人作嫁</th><td><div class="ex">「為」人作嫁：為別人作嫁衣裳，比喻徒然為他人辛苦<span class="src">（補充）</span></div></td></tr></tbody></table></div>
 <p class="note">「為」讀去聲（ㄨㄟˋ）時多作介詞，常見「因為、替、與同、對向、表目的」等意義，須依上下文判斷。</p>
+</div>
+<div class="zi-block" style="--c:#2f9e44">
 <h2>二、為　ㄨㄟˊ（陽平，第67、68課）</h2>
 <div class="tablewrap"><table class="meaning blue"><thead><tr><th>意義（詞性）</th><th>例句（出處）</th></tr></thead><tbody><tr><th scope="row">動，行、作</th><td><div class="ex">事在人「為」<span class="src">（補充）</span></div><div class="ex">「為」善最樂<span class="src">（補充）</span></div></td></tr><tr><th scope="row">動，治理</th><td><div class="ex">「為」政以德，譬如北辰，居其所，而眾星共之<span class="src">（補充）</span></div></td></tr><tr><th scope="row">動，當作</th><td><div class="ex">以從草「為」林<span class="src">（補充）</span></div><div class="ex">以土礫凸者「為」丘，凹者「為」壑<span class="src">（補充）</span></div><div class="ex">蟲蟻「為」獸<span class="src">（補充）</span></div></td></tr><tr><th scope="row">動，擔任</th><td><div class="ex">子游「為」武城宰<span class="src">（第68課，原文）</span></div><div class="ex">「為」民前鋒<span class="src">（補充）</span></div></td></tr><tr><th scope="row">介，被（表被動）</th><td><div class="ex">二蟲盡「為」（ㄨㄟˊ）所吞<span class="src">（補充）</span></div></td></tr><tr><th scope="row">動，當作、作為</th><td><div class="ex">指鹿「為」馬（比喻顛倒是非）<span class="src">（補充）</span></div></td></tr><tr><th scope="row">動，是</th><td><div class="ex">失敗「為」成功之母<span class="src">（補充）</span></div><div class="ex">助人「為」快樂之母<span class="src">（補充）</span></div></td></tr></tbody></table></div>
 <p class="note">「為」讀陽平（ㄨㄟˊ）時多作動詞，意義隨句子而不同：行、治理、當作、擔任、是；置於動詞後表被動則讀輕聲、作介詞「被」。</p>
+</div>
+<div class="zi-block" style="--c:#1c7ed6">
 <h2>三、謝（第70課．複習）</h2>
 <div class="tablewrap"><table class="meaning"><thead><tr><th>意義（詞性）</th><th>例句（出處）</th></tr></thead><tbody><tr><th scope="row">①辭去、推卻、拒絕</th><td><div class="ex">閉門「謝」客、敬「謝」不敏、婉「謝」<span class="src">（補充）</span></div></td></tr><tr><th scope="row">②辭別、告別</th><td><div class="ex">含情凝睇「謝」君王，一別音容兩渺茫；「謝」世<span class="src">（補充）</span></div></td></tr><tr><th scope="row">③賠罪、認錯</th><td><div class="ex">「謝」罪；旦日不可不蚤自來「謝」項王<span class="src">（補充）</span></div></td></tr><tr><th scope="row">④更換、替代</th><td><div class="ex">新陳代「謝」<span class="src">（補充）</span></div></td></tr><tr><th scope="row">⑤詢問、問候</th><td><div class="ex">使君「謝」羅敷：『寧可共載不？』<span class="src">（補充）</span></div></td></tr><tr><th scope="row">⑥表示感激、酬答</th><td><div class="ex">感「謝」、道「謝」、「謝」天「謝」地<span class="src">（補充）</span></div></td></tr><tr><th scope="row">⑦凋零、消逝</th><td><div class="ex">凋「謝」；荏苒冬春謝，寒暑忽流易<span class="src">（補充）</span></div></td></tr><tr><th scope="row">本課「謝」：賠罪、認錯</th><td><div class="ex">黔敖從而「謝」焉（黔敖向饑餓者道歉）<span class="src">（第70課，原文）</span></div></td></tr></tbody></table></div>
 <p class="note">「謝」共七義：辭去、辭別、賠罪、更換、詢問、感激、凋零；本課〈嗟來之食〉「從而謝焉」的「謝」是「賠罪、認錯」之意。</p>
+</div>
+<div class="zi-block" style="--c:#ae3ec9">
 <h2>四、文言文特殊詞類活用：使動、意動、為動</h2>
 <h4>㈠使動用法</h4>
 <p class="note" style="font-size:.9rem;color:var(--muted)">動詞對其賓語有「讓他……」、「使他……」之意；由動詞、名詞、形容詞活用而成。</p>
@@ -157,226 +223,287 @@
 <p class="note" style="font-size:.9rem;color:var(--muted)">主詞替賓語實施某種動作，有「為他……」、「替他……」之意；動詞多為不及物動詞。</p>
 <div class="tablewrap"><table class="meaning"><thead><tr><th>類型</th><th>例句</th></tr></thead><tbody><tr><th scope="row">為動</th><td>等死，「死」國可乎　→為國而死</td></tr><tr><th scope="row">為動</th><td>後人「哀」之而不鑒之　→為…哀傷</td></tr></tbody></table></div>
 <p class="note">💡 使動：使（某人某物）怎麼樣；意動：把（某人某物）當作、認為（某人某物）怎麼樣；為動：為了（某人某物）怎麼樣。</p>
-</section>
-<section id="idioms">
-<h2 class="newpage">五、成語整理</h2>
-
-<h3>課文成語</h3><div class="tablewrap"><table class="meaning "><thead><tr><th>成語</th><th>意思</th><th>出處</th></tr></thead><tbody><tr><th scope="row">畫鬼容易畫人難</th><td>比喻虛構或沒人見過的事物容易描繪，而真實且熟悉的事物需要極深的功底才能精準呈現。</td><td>第61課</td></tr><tr><th scope="row">一字之師</th><td>能指點一字之誤，使詩文更臻完美的人。</td><td>第62課</td></tr><tr><th scope="row">東施效顰</th><td>比喻不衡量自身條件而一味模仿他人，反而弄巧成拙。</td><td>第64課</td></tr><tr><th scope="row">暴虎馮河</th><td>暴，徒手搏鬥；馮，徒步渡河。指空手與虎搏鬥，不靠舟船渡河，比喻人有勇而無謀。</td><td>第65課</td></tr><tr><th scope="row">一舉兩得</th><td>比喻做一件事，同時獲得兩種好處。</td><td>第67課</td></tr><tr><th scope="row">弦歌不輟</th><td>比喻政治清明，禮樂教化普及。</td><td>第68課</td></tr><tr><th scope="row">嗟來之食</th><td>指帶有輕蔑、侮辱性質的施捨；比喻寧可餓死，也不接受侮辱性的幫助。</td><td>第70課</td></tr></tbody></table></div>
-<h3>補充相關成語</h3><div class="tablewrap"><table class="meaning blue"><thead><tr><th>成語</th><th>意思</th><th>出處</th></tr></thead><tbody><tr><th scope="row">肥水不落外人田</th><td>比喻好處不落入外人之手，都留給自己人。</td><td>第63課，趣味諺語</td></tr><tr><th scope="row">畫虎不成反類狗</th><td>比喻仿效他人不到家，反而變得不倫不類。</td><td>第64課，課本標註</td></tr><tr><th scope="row">為人作嫁</th><td>為別人作嫁衣裳，比喻徒然為他人辛苦。</td><td>補充「為」字</td></tr><tr><th scope="row">指鹿為馬</th><td>比喻顛倒是非。</td><td>補充「為」字</td></tr><tr><th scope="row">坐收漁翁之利</th><td>比喻雙方爭執不下，讓第三者從中得利。</td><td>第67課，補充</td></tr><tr><th scope="row">沉魚落雁</th><td>形容女子容貌美好，使魚沉入水底、雁降落沙洲。</td><td>第64課，補充</td></tr><tr><th scope="row">閉月羞花</th><td>形容女子容貌美麗，使月亮躲藏、花朵羞愧。</td><td>第64課，補充</td></tr><tr><th scope="row">傾國傾城</th><td>形容女子容貌極為美麗，使全國人都為之傾倒愛慕。</td><td>第64課，補充</td></tr><tr><th scope="row">國色天香</th><td>形容女子容貌美麗高貴，如牡丹花一般。</td><td>第64課，補充</td></tr><tr><th scope="row">匹夫之勇</th><td>指不用智謀，只憑一己血氣之勇。</td><td>第65課，補充</td></tr><tr><th scope="row">班門弄斧</th><td>在巧匠魯班門前賣弄使用斧頭的技術，比喻在行家面前賣弄本事，不自量力。</td><td>第65課，補充</td></tr><tr><th scope="row">香餌之下必有懸魚</th><td>比喻只要有利可圖，必定有人願意冒險嘗試。</td><td>第67課，補充</td></tr><tr><th scope="row">鷸蚌相爭，漁翁得利</th><td>比喻雙方爭執不下，反而讓第三者從中得利。</td><td>第67課，補充</td></tr><tr><th scope="row">不入虎穴，焉得虎子</th><td>比喻不冒險犯難，就無法獲得成功。</td><td>第67課，補充</td></tr><tr><th scope="row">不經一事，不長一智</th><td>不經歷一件事，就不能增長一分智慧。</td><td>第67課，補充</td></tr></tbody></table></div>
-</section>
-<section id="notes">
-<h2 class="newpage">各課重點</h2>
-
-<h3 class="lesson">第61課　畫鬼最易<small>　《韓非子》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">為</th><td>替</td></tr><tr><th scope="row">孰</th><td>誰、什麼</td></tr><tr><th scope="row">罄</th><td>出現在眼前</td></tr><tr><th scope="row">類</th><td>相似</td></tr><tr><th scope="row">鬼魅</th><td>妖魔鬼怪</td></tr><tr><th scope="row">旦</th><td>早晨</td></tr><tr><th scope="row">暮</th><td>傍晚</td></tr></tbody></table></div>
-<p class="note">原文：客有為齊王畫者，齊王問曰：「畫孰最難者？」曰：「犬馬最難。」「孰易者？」曰：「鬼魅最易。」夫犬馬，人所知也，旦暮罄於前，不可類之，故難。鬼魅，無形者，不罄於前，故易之也。</p>
-<p class="note">語譯：有個客人替齊王作畫，齊王問他：「畫什麼東西最難？」客人回答：「狗、馬最難畫。」齊王又問：「畫什麼最容易？」客人說：「鬼怪最容易。」狗、馬是人人都認得的，從早到晚都出現在人們眼前，不能只畫得相似，所以難畫；鬼怪是沒有固定形體的，不會出現在人們眼前，所以容易畫。</p>
-<p class="note">「畫鬼最易」點出：越是常見、人人熟悉的事物，越難只求形似，反而虛構、無人見過的事物容易蒙混過關。</p>
-<p class="note">補充：「畫鬼容易畫人難」——比喻虛構或沒人見過的事物容易描繪，而真實且熟悉的事物需要極深的功底才能精準呈現。</p>
-
-<h3 class="lesson">第62課　一字師<small>　《五代史補》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">攜</th><td>帶著</td></tr><tr><th scope="row">謁</th><td>拜訪</td></tr><tr><th scope="row">矍然</th><td>驚訝、驚喜的樣子</td></tr><tr><th scope="row">士林</th><td>讀書人、學術界</td></tr><tr><th scope="row">一字之師</th><td>能指點一字之誤、使詩文更臻完美的老師</td></tr></tbody></table></div>
-<p class="note">原文：鄭谷在袁州，齊己攜詩往謁焉。有〈早梅詩〉曰：「前村深雪裡，昨夜數枝開。」谷笑曰：「數枝非早也，未若一枝佳。」齊己矍然，不覺兼三禮拜。自是士林以谷為一字之師。</p>
-<p class="note">語譯：鄭谷住在袁州，齊己帶著自己的詩作前去拜訪他。齊己有一首〈早梅詩〉，其中兩句是：「前村深雪裡，昨夜數枝開。」鄭谷笑著說：「『數枝』開花就不算早了，不如改成『一枝』才好。」齊己聽了十分驚喜，忍不住向鄭谷行了好幾次禮。從此讀書人便稱鄭谷為「一字之師」。</p>
-<p class="note">鄭谷僅改一字，就讓「早梅」之「早」意更加精確傳神，說明煉字對詩意的巨大影響。</p>
-<p class="note">名句：疏影橫斜水清淺，暗香浮動月黃昏（林逋〈山園小梅〉）——疏淡的梅影橫斜映在清淺的池水裡，清幽的香氣在朦朧的月色中飄散，是詠梅的千古名句。</p>
-
-<h3 class="lesson">第63課　楚弓楚得<small>　《說苑》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">遺</th><td>遺失</td></tr><tr><th scope="row">止</th><td>不用了</td></tr><tr><th scope="row">求</th><td>尋找</td></tr><tr><th scope="row">惜</th><td>可惜</td></tr><tr><th scope="row">仲尼</th><td>孔子</td></tr><tr><th scope="row">聞</th><td>聽到</td></tr><tr><th scope="row">大公</th><td>公平無私到極點</td></tr></tbody></table></div>
-<p class="note">原文：楚共王出獵而遺其弓，左右請求之。王曰：「止！楚人遺弓，楚人得之，又何求焉！」仲尼聞之曰：「惜乎其不大也！不曰『人遺弓，人得之』而已，何必楚也？」</p>
-<p class="note">語譯：楚共王出外打獵時遺失了弓，隨從要去尋找，楚王說：「算了！楚國人遺失了弓，還是楚國人撿到，又何必去找呢！」孔子聽到這件事後說：「可惜他的胸襟還不夠大啊！何不說『人遺失了弓，人撿到了』就好，何必說『楚』呢？」</p>
-<p class="note">楚共王的「楚人遺弓，楚人得之」已算大度，但孔子認為真正的大公無私應去除「楚」的界線，及於天下人。</p>
-<p class="note">諺語：肥水不落外人田——比喻好處不落入外人之手，都留給自己人。</p>
-<p class="note">名句：登東山而小魯，登泰山而小天下（《孟子．盡心上》）——登上東山，就覺得魯國變小了；登上泰山，就覺得天下都變小了；比喻站得越高，眼界越開闊，看待事物的格局也越大，與孔子期許楚王胸襟更加寬廣的道理相通。</p>
-
-<h3 class="lesson">第64課　醜女效顰<small>　《莊子》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">顰</th><td>皺眉頭</td></tr><tr><th scope="row">里</th><td>鄉里</td></tr><tr><th scope="row">挈</th><td>帶領、帶著</td></tr><tr><th scope="row">美之</th><td>認為她很美</td></tr><tr><th scope="row">堅閉門</th><td>緊閉家門</td></tr></tbody></table></div>
-<p class="note">原文：西施病心而顰其里，其里之醜人見而美之，歸亦捧心而顰其里。其里之富人見之，堅閉門而不出；貧人見之，挈妻子而去之走。彼知顰美，而不知顰之所以美。</p>
-<p class="note">語譯：西施因為心口疼痛，皺著眉頭走過村子，同村一位容貌不佳的女子看見了，覺得這樣子很美，回去後也學著西施捧心皺眉的樣子。鄉里的富人看到了，緊閉家門不出來；窮人看到了，帶著妻子兒女躲得遠遠的。醜女只知道皺眉頭很美，卻不知道西施皺眉之所以美的真正原因。</p>
-<p class="note">醜人只學到表面動作，卻不明白西施之美源於她本身的姿容氣質，一味模仿反而弄巧成拙。</p>
-<p class="note">成語：東施效顰——比喻不衡量自身條件而一味模仿他人，反而弄巧成拙。畫虎不成反類狗——比喻仿效他人不到家，反而變得不倫不類。</p>
-<p class="note">文章結構：先敘後議——先敘述西施顰眉與醜人效顰的故事經過，再以「彼知顰美，而不知顰之所以美」提出評議與觀點。</p>
-<p class="note">補充：文言文第三人稱代詞——彼（他，指醜人，如「彼知顰美」）、其（他的／他，如「其里」「其里之富人」）。</p>
-<p class="note">補充：形容女子容貌美麗的相關成語——沉魚落雁（形容女子容貌美好，使魚沉入水底、雁降落沙洲）、閉月羞花（形容女子容貌美麗，使月亮躲藏、花朵羞愧）、傾國傾城（形容女子容貌極為美麗，使全國人都為之傾倒愛慕）、國色天香（形容女子容貌美麗高貴，如牡丹花一般）。</p>
-
-<h3 class="lesson">第65課　宣王好射<small>　《呂氏春秋》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">說</th><td>通「悅」，喜歡</td></tr><tr><th scope="row">彊</th><td>強</td></tr><tr><th scope="row">石</th><td>古代計算弓力的單位</td></tr><tr><th scope="row">引</th><td>拉弓</td></tr><tr><th scope="row">中關</th><td>拉到一半</td></tr><tr><th scope="row">情</th><td>實際情況</td></tr><tr><th scope="row">悲</th><td>可悲</td></tr></tbody></table></div>
-<p class="note">原文：齊宣王好射，說人之謂己能用強弓也。其實所用不過三石，以示左右，左右皆試引之，中關而止，皆曰：「此不下九石，非王其孰能用是？」宣王悅之。然則宣王之情，所用不過三石，而終身自以為九石。豈不悲哉？</p>
-<p class="note">語譯：齊宣王喜歡射箭，喜歡聽別人說自己能拉開強弓。其實他所用的弓不超過三石，卻拿給身邊的人看，身邊的人都試著拉弓，拉到一半就故意停下，都說：「這弓的拉力不下九石，除了大王，誰能拉得動呢？」宣王聽了非常高興。然而事實上，宣王所用的弓不超過三石，卻一輩子都以為自己用的是九石重的弓，這不是很可悲嗎？</p>
-<p class="note">旁人的刻意奉承，讓宣王終身活在虛假的自我評價中而不自知，作者以「豈不悲哉」點出被奉承蒙蔽的可悲。</p>
-<p class="note">諺語：暴虎馮河——指空手與虎搏鬥、不靠舟船渡河，比喻人有勇而無謀，只逞匹夫之勇。</p>
-<p class="note">文章結構：先敘後議——先敘述宣王愛用強弓、被左右奉承的經過，再以「豈不悲哉」呈現作者對此事的評論與觀點。</p>
-<p class="note">補充成語：匹夫之勇（指不用智謀，只憑一己血氣之勇）、班門弄斧（在巧匠魯班門前賣弄使用斧頭的技術，比喻在行家面前賣弄本事，不自量力）。</p>
-
-<h3 class="lesson">第66課　王勃腹稿<small>　《初潭集》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">勃</th><td>唐代文學家王勃</td></tr><tr><th scope="row">屬稿</th><td>寫初稿</td></tr><tr><th scope="row">覆</th><td>蓋</td></tr><tr><th scope="row">援筆</th><td>提筆</td></tr><tr><th scope="row">易</th><td>修改</td></tr><tr><th scope="row">腹稿</th><td>事先在心中構思好，一動筆便一氣呵成的文稿</td></tr></tbody></table></div>
-<p class="note">原文：王勃所至，請託為文，金帛豐積，人謂心織舌耕。每屬稿，必先磨墨數升，則酣飲，引被覆面而臥；及寤，援筆成篇，不易一字，時人謂之「腹稿」。</p>
-<p class="note">語譯：王勃所到之處，人們常請託他寫文章，因此金銀綢緞收穫豐富，人們稱他是「心織舌耕」，比喻他靠寫作維生，才思猶如耕作般勤奮而豐收。他每次要動筆寫文章前，一定先磨好幾升的墨，然後開懷暢飲，拉起被子蒙頭而睡；一覺醒來，提筆一氣呵成，文不加點，一個字都不必修改，當時人稱這種寫作方式為「腹稿」。</p>
-<p class="note">「腹稿」形容王勃寫作前已在心中構思完成，動筆便一氣呵成，展現他過人的文思與才氣。</p>
-<p class="note">名句：讀書破萬卷，下筆如有神（杜甫）——多讀優秀的作品，便能從中受到教育、啟發，進而增長才能，提筆為文也能如有神助。</p>
-
-<h3 class="lesson">第67課　一舉兩得<small>　《戰國策》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">爭</th><td>爭食</td></tr><tr><th scope="row">鬥</th><td>打鬥</td></tr><tr><th scope="row">戾蟲</th><td>兇暴的動物</td></tr><tr><th scope="row">甘餌</th><td>美味的食物</td></tr><tr><th scope="row">刺</th><td>殺</td></tr><tr><th scope="row">待</th><td>等待</td></tr></tbody></table></div>
-<p class="note">原文：有兩虎爭人而鬥者，管莊子將刺之，管與止之曰：「虎者，戾蟲；人者，甘餌也。今兩虎爭人而鬥，小者必死，大者必傷。子待傷虎而刺之，則是一舉而兩虎之名。」</p>
-<p class="note">語譯：有兩隻老虎為了爭食一個人而互相打鬥，管莊子準備上前刺殺牠們。有人阻止他說：「老虎是兇暴的動物，人是牠們喜愛的食物。現在兩隻老虎爭著吃人而互相搏鬥，弱小的必定會死，強壯的也必定會受傷。你只要等待受傷的老虎，再上前刺殺牠，就能一次獲得殺死兩隻老虎的美名了。」</p>
-<p class="note">旁人建議管莊子等兩虎兩敗俱傷後再出手，便能以最小的力氣獲得殺死兩虎的美名，說明善用時機、坐收其利的智慧。</p>
-<p class="note">成語：一舉兩得——比喻做一件事，同時獲得兩種好處，與「坐收漁翁之利」意近。</p>
-<p class="note">補充：文言文第二人稱代詞——汝、爾、子、若、君，都可譯為「你」。</p>
-<p class="note">補充成語：香餌之下必有懸魚（比喻只要有利可圖，必定有人願意冒險嘗試）、鷸蚌相爭，漁翁得利（比喻雙方爭執不下，反而讓第三者從中得利）、不入虎穴，焉得虎子（比喻不冒險犯難，就無法獲得成功）、不經一事，不長一智（不經歷一件事，就不能增長一分智慧）。</p>
-
-<h3 class="lesson">第68課　割雞焉用牛刀<small>　《論語》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">武城</th><td>地名，子游治理的地方</td></tr><tr><th scope="row">弦歌</th><td>以琴瑟伴奏歌唱，象徵以禮樂教化百姓</td></tr><tr><th scope="row">莞爾</th><td>微笑的樣子</td></tr><tr><th scope="row">偃</th><td>子游自稱</td></tr><tr><th scope="row">戲</th><td>開玩笑</td></tr></tbody></table></div>
-<p class="note">原文：子之武城，聞弦歌之聲。夫子莞爾而笑，曰：「割雞焉用牛刀？」子游對曰：「昔者偃也聞諸夫子曰：『君子學道則愛人，小人學道則易使也。』」子曰：「二三子！偃之言是也，前言戲之耳。」</p>
-<p class="note">語譯：孔子到了武城，聽到彈琴唱歌的聲音。孔子微微一笑，說：「殺雞何必用宰牛的刀？」子游回答說：「以前我聽老師說過：『在上位的人學習禮樂就會愛護人民，在下位的人學習禮樂就容易聽從使喚。』」孔子說：「各位同學！偃的話是對的，我剛才只是跟他開玩笑罷了。」</p>
-<p class="note">孔子原以為治理小小的武城不必大費周章推行禮樂教化，子游卻以「君子學道則愛人」回應，孔子隨即收回玩笑話，肯定禮樂教化不分大小地方皆有益處。</p>
-<p class="note">成語：弦歌不輟——比喻政治清明，禮樂教化普及。</p>
-
-<h3 class="lesson">第69課　石學士<small>　《冷齋夜話》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">曼卿</th><td>北宋文學家石延年</td></tr><tr><th scope="row">嘗</th><td>曾經</td></tr><tr><th scope="row">馭</th><td>駕馭馬匹</td></tr><tr><th scope="row">扶</th><td>扶起</td></tr><tr><th scope="row">慍</th><td>生氣</td></tr><tr><th scope="row">徐</th><td>慢慢地</td></tr><tr><th scope="row">賴</th><td>幸虧、幸好</td></tr><tr><th scope="row">意（通「臆」）</th><td>動詞，臆測、猜測（如：意其必大詬——猜想他一定會大罵）</td></tr><tr><th scope="row">若</th><td>連詞，假設語氣，如果（如：若他人皮骨已損矣）</td></tr></tbody></table></div>
-<p class="note">原文：石學士曼卿嘗出遊報慈寺，馭者失控，馬驚，曼卿墜於地。左右驚扶，恐曼卿有慍色，曼卿徐曰：「賴我石學士，若他人皮骨已損矣。」市人皆稱幸。</p>
-<p class="note">語譯：石學士曼卿曾經出遊到報慈寺，馬夫沒有控制好，馬受到驚嚇，曼卿從馬背上摔了下來。旁邊的人急忙驚慌地扶起他，擔心他會生氣，曼卿卻慢條斯理地說：「幸好我是石學士，如果換作是別人，恐怕皮骨都要摔傷了。」市集裡的人聽了都稱讚他豁達、幸運。</p>
-<p class="note">石曼卿墜馬後不僅不生氣，反而幽默自嘲、化解眾人的擔憂，展現豁達的胸襟與機智。</p>
-<p class="note">人物側寫：石曼卿個性幽默風趣、善解人意，遇事能自我解嘲，化解他人的擔憂。</p>
-
-<h3 class="lesson">第70課　嗟來之食<small>　《禮記．檀弓》</small></h3>
-<div class="tablewrap"><table class="meaning "><thead><tr><th>詞語</th><th>意思</th></tr></thead><tbody><tr><th scope="row">黔敖</th><td>人名</td></tr><tr><th scope="row">蒙袂</th><td>用衣袖遮著臉</td></tr><tr><th scope="row">輯屨</th><td>拖著鞋子</td></tr><tr><th scope="row">貿貿然</th><td>眼睛看不清、搖搖晃晃的樣子</td></tr><tr><th scope="row">嗟</th><td>感嘆詞，喂</td></tr><tr><th scope="row">予</th><td>我，自謙之詞</td></tr><tr><th scope="row">斯</th><td>這個地步</td></tr><tr><th scope="row">謝</th><td>道歉</td></tr></tbody></table></div>
-<p class="note">原文：齊大饑，黔敖為食於路，以待餓者而食之。有餓者，蒙袂輯屨，貿貿然來。黔敖左奉食，右執飲，曰：「嗟！來食！」揚其目而視之，曰：「予唯不食嗟來之食，以至於斯也！」從而謝焉，終不食而死。</p>
-<p class="note">語譯：齊國發生嚴重饑荒，黔敖在路邊準備食物，等待飢餓的人來吃。有個飢餓的人，用衣袖遮著臉，拖著鞋子，搖搖晃晃地走來。黔敖左手捧著食物，右手端著湯，說：「喂！來吃吧！」飢餓的人抬起眼睛看著他，說：「我就是不願吃這種帶有侮辱意味、呼喝施捨的食物，才會餓成這個樣子！」黔敖於是向他道歉，但那人終究不肯吃，最後餓死了。</p>
-<p class="note">饑餓者寧死也不接受帶有輕蔑口氣的施捨，展現「不食嗟來之食」的氣節與尊嚴。</p>
-<p class="note">成語：嗟來之食——指帶有輕蔑、侮辱性質的施捨；比喻寧可餓死，也不接受侮辱性的幫助。</p>
-<p class="note">補充：文言文第一人稱代詞——予、余、吾，皆可譯為「我」。</p>
-<p class="note">補充：自謙用語——愚、某、僕，皆可用來謙稱自己。</p>
-<p class="note">補充：屨（ㄐㄩˋ）、屣（ㄒㄧˇ）、履（ㄌㄩˇ）三字都通「鞋」，如「輯屨」即拖著鞋子、「棄之如敝屣」即丟棄破鞋一般。</p>
-<h3>字音辨析</h3><div class="tablewrap"><table class="meaning "><thead><tr><th>字</th><th>讀音</th><th>例詞（出處）</th></tr></thead><tbody><tr><th scope="row">罄</th><td>ㄑㄧㄥˋ</td><td>旦暮罄於前（第61課）</td></tr><tr><th scope="row">謁</th><td>ㄧㄝˋ</td><td>攜詩往謁（第62課）</td></tr><tr><th scope="row">矍然</th><td>ㄐㄩㄝˊ　ㄖㄢˊ</td><td>齊己矍然（第62課）</td></tr><tr><th scope="row">挈</th><td>ㄑㄧㄝˋ</td><td>挈妻子而去（第64課）</td></tr><tr><th scope="row">顰</th><td>ㄆㄧㄣˊ</td><td>西施病心而顰（第64課）</td></tr><tr><th scope="row">彊</th><td>ㄑㄧㄤˊ（通「強」）</td><td>能用彊弓（第65課）</td></tr><tr><th scope="row">屬稿</th><td>ㄓㄨˇ　ㄍㄠˇ</td><td>每屬稿（第66課）</td></tr><tr><th scope="row">寤</th><td>ㄨˋ</td><td>及寤（第66課）</td></tr><tr><th scope="row">戾蟲</th><td>ㄌㄧˋ　ㄔㄨㄥˊ</td><td>虎者，戾蟲（第67課）</td></tr><tr><th scope="row">莞爾</th><td>ㄨㄢˇ　ㄦˇ</td><td>夫子莞爾而笑（第68課）</td></tr><tr><th scope="row">偃</th><td>ㄧㄢˇ</td><td>偃之言是也（第68課）</td></tr><tr><th scope="row">馭者</th><td>ㄩˋ　ㄓㄜˇ</td><td>馭者失控（第69課）</td></tr><tr><th scope="row">慍</th><td>ㄩㄣˋ</td><td>恐曼卿有慍色（第69課）</td></tr><tr><th scope="row">黔敖</th><td>ㄑㄧㄢˊ　ㄠˊ</td><td>黔敖為食於路（第70課）</td></tr><tr><th scope="row">蒙袂</th><td>ㄇㄥˊ　ㄇㄟˋ</td><td>蒙袂輯屨（第70課）</td></tr><tr><th scope="row">輯屨</th><td>ㄐㄧˊ　ㄐㄩˋ</td><td>蒙袂輯屨（第70課）</td></tr><tr><th scope="row">貿貿然</th><td>ㄇㄠˋ　ㄇㄠˋ　ㄖㄢˊ</td><td>貿貿然來（第70課）</td></tr><tr><th scope="row">屨</th><td>ㄐㄩˋ</td><td>蒙袂輯屨（第70課，通「鞋」）</td></tr><tr><th scope="row">屣</th><td>ㄒㄧˇ</td><td>棄之如敝屣（通「鞋」，補充）</td></tr><tr><th scope="row">履</th><td>ㄌㄩˇ</td><td>如履薄冰（通「鞋」，補充）</td></tr><tr><th scope="row">嗟</th><td>ㄐㄧㄝ</td><td>嗟來之食（第70課）</td></tr></tbody></table></div>
+</div>
+<div class="zi-block" style="--c:#0b7285">
+<h2>五、字音辨析</h2>
+<div class="tablewrap"><table class="meaning"><thead><tr><th>字</th><th>讀音</th><th>例詞（出處）</th></tr></thead><tbody><tr><th scope="row">罄</th><td>ㄑㄧㄥˋ</td><td>旦暮罄於前（第61課）</td></tr><tr><th scope="row">謁</th><td>ㄧㄝˋ</td><td>攜詩往謁（第62課）</td></tr><tr><th scope="row">矍然</th><td>ㄐㄩㄝˊ　ㄖㄢˊ</td><td>齊己矍然（第62課）</td></tr><tr><th scope="row">挈</th><td>ㄑㄧㄝˋ</td><td>挈妻子而去（第64課）</td></tr><tr><th scope="row">顰</th><td>ㄆㄧㄣˊ</td><td>西施病心而顰（第64課）</td></tr><tr><th scope="row">彊</th><td>ㄑㄧㄤˊ（通「強」）</td><td>能用彊弓（第65課）</td></tr><tr><th scope="row">屬稿</th><td>ㄓㄨˇ　ㄍㄠˇ</td><td>每屬稿（第66課）</td></tr><tr><th scope="row">寤</th><td>ㄨˋ</td><td>及寤（第66課）</td></tr><tr><th scope="row">戾蟲</th><td>ㄌㄧˋ　ㄔㄨㄥˊ</td><td>虎者，戾蟲（第67課）</td></tr><tr><th scope="row">莞爾</th><td>ㄨㄢˇ　ㄦˇ</td><td>夫子莞爾而笑（第68課）</td></tr><tr><th scope="row">偃</th><td>ㄧㄢˇ</td><td>偃之言是也（第68課）</td></tr><tr><th scope="row">馭者</th><td>ㄩˋ　ㄓㄜˇ</td><td>馭者失控（第69課）</td></tr><tr><th scope="row">慍</th><td>ㄩㄣˋ</td><td>恐曼卿有慍色（第69課）</td></tr><tr><th scope="row">黔敖</th><td>ㄑㄧㄢˊ　ㄠˊ</td><td>黔敖為食於路（第70課）</td></tr><tr><th scope="row">蒙袂</th><td>ㄇㄥˊ　ㄇㄟˋ</td><td>蒙袂輯屨（第70課）</td></tr><tr><th scope="row">輯屨</th><td>ㄐㄧˊ　ㄐㄩˋ</td><td>蒙袂輯屨（第70課）</td></tr><tr><th scope="row">貿貿然</th><td>ㄇㄠˋ　ㄇㄠˋ　ㄖㄢˊ</td><td>貿貿然來（第70課）</td></tr><tr><th scope="row">屨</th><td>ㄐㄩˋ</td><td>蒙袂輯屨（第70課，通「鞋」）</td></tr><tr><th scope="row">屣</th><td>ㄒㄧˇ</td><td>棄之如敝屣（通「鞋」，補充）</td></tr><tr><th scope="row">履</th><td>ㄌㄩˇ</td><td>如履薄冰（通「鞋」，補充）</td></tr><tr><th scope="row">嗟</th><td>ㄐㄧㄝ</td><td>嗟來之食（第70課）</td></tr></tbody></table></div>
+</div>
 </section>
 <section id="practice">
 <h2 class="newpage">古文今讀 61–70 課　虛字練習</h2>
 <p class="infoline printonly">班級：＿＿＿＿　座號：＿＿＿＿　姓名：＿＿＿＿＿＿　　得分：＿＿＿＿</p>
-<p class="rule">選擇題（每題 5 分，共 100 分）。粗體字為題目所問的字。</p>
-
-<h3 class="lesson">虛字練習（「為」、「謝」用法）</h3>
+<p class="rule">選擇題（每題 5 分，共 75 分）。粗體加底線的字為題目所問的字。</p>
 <ol class="qs">
-<li class="q"><div class="stem">「項『<b>為</b>』之強」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 介，因為</li><li><span class="lab">(B)</span> 介，替</li><li><span class="lab">(C)</span> 動，是</li><li><span class="lab">(D)</span> 介，被</li></ul></li>
-<li class="q"><div class="stem">「『<b>為</b>』民服務」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 因為</li><li><span class="lab">(B)</span> 替</li><li><span class="lab">(C)</span> 當作</li><li><span class="lab">(D)</span> 被</li></ul></li>
-<li class="q"><div class="stem">「道不同不相『<b>為</b>』謀」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 替</li><li><span class="lab">(B)</span> 與、同</li><li><span class="lab">(C)</span> 是</li><li><span class="lab">(D)</span> 當作</li></ul></li>
-<li class="q"><div class="stem">「此中人語云，不足『<b>為</b>』外人道也」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 對、向</li><li><span class="lab">(B)</span> 替</li><li><span class="lab">(C)</span> 因為</li><li><span class="lab">(D)</span> 是</li></ul></li>
-<li class="q"><div class="stem">「事在人『<b>為</b>』」的「為」，詞性與意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 介詞，被</li><li><span class="lab">(B)</span> 動詞，做、行</li><li><span class="lab">(C)</span> 介詞，因為</li><li><span class="lab">(D)</span> 動詞，是</li></ul></li>
-<li class="q"><div class="stem">「『<b>為</b>』政以德」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作</li><li><span class="lab">(B)</span> 是</li><li><span class="lab">(C)</span> 治理</li><li><span class="lab">(D)</span> 替</li></ul></li>
-<li class="q"><div class="stem">「以土礫凸者『<b>為</b>』丘」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作</li><li><span class="lab">(B)</span> 治理</li><li><span class="lab">(C)</span> 替</li><li><span class="lab">(D)</span> 被</li></ul></li>
-<li class="q"><div class="stem">「子游『<b>為</b>』武城宰」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作</li><li><span class="lab">(B)</span> 擔任</li><li><span class="lab">(C)</span> 是</li><li><span class="lab">(D)</span> 被</li></ul></li>
-<li class="q"><div class="stem">「二蟲盡『<b>為</b>』所吞」的「為」，用法是？</div><ul class="opts"><li><span class="lab">(A)</span> 動詞，做</li><li><span class="lab">(B)</span> 介詞，表被動，被</li><li><span class="lab">(C)</span> 動詞，是</li><li><span class="lab">(D)</span> 介詞，替</li></ul></li>
-<li class="q"><div class="stem">「指鹿『<b>為</b>』馬」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作、作為</li><li><span class="lab">(B)</span> 替</li><li><span class="lab">(C)</span> 因為</li><li><span class="lab">(D)</span> 被</li></ul></li>
-<li class="q"><div class="stem">「失敗『<b>為</b>』成功之母」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作</li><li><span class="lab">(B)</span> 替</li><li><span class="lab">(C)</span> 是</li><li><span class="lab">(D)</span> 被</li></ul></li>
-<li class="q"><div class="stem">「閉門『<b>謝</b>』客」的「謝」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 辭別</li><li><span class="lab">(B)</span> 推卻、拒絕</li><li><span class="lab">(C)</span> 道歉</li><li><span class="lab">(D)</span> 凋零</li></ul></li>
-<li class="q"><div class="stem">「旦日不可不蚤自來『<b>謝</b>』項王」的「謝」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 感謝</li><li><span class="lab">(B)</span> 道歉、賠罪</li><li><span class="lab">(C)</span> 辭別</li><li><span class="lab">(D)</span> 詢問</li></ul></li>
-<li class="q"><div class="stem">「使君『<b>謝</b>』羅敷」的「謝」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 推卻</li><li><span class="lab">(B)</span> 詢問、問候</li><li><span class="lab">(C)</span> 感謝</li><li><span class="lab">(D)</span> 凋零</li></ul></li>
-<li class="q"><div class="stem">「新陳代『<b>謝</b>』」的「謝」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 替代、更換</li><li><span class="lab">(B)</span> 辭別</li><li><span class="lab">(C)</span> 凋零</li><li><span class="lab">(D)</span> 道歉</li></ul></li>
+<li class="q" data-a="A" data-sec="p" data-pts="5"><div class="stem">「項『<b>為</b>』之強」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 介，因為</li><li><span class="lab">(B)</span> 介，替</li><li><span class="lab">(C)</span> 動，是</li><li><span class="lab">(D)</span> 介，被</li></ul></li>
+<li class="q" data-a="B" data-sec="p" data-pts="5"><div class="stem">「『<b>為</b>』民服務」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 因為</li><li><span class="lab">(B)</span> 替</li><li><span class="lab">(C)</span> 當作</li><li><span class="lab">(D)</span> 被</li></ul></li>
+<li class="q" data-a="B" data-sec="p" data-pts="5"><div class="stem">「道不同不相『<b>為</b>』謀」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 替</li><li><span class="lab">(B)</span> 與、同</li><li><span class="lab">(C)</span> 是</li><li><span class="lab">(D)</span> 當作</li></ul></li>
+<li class="q" data-a="A" data-sec="p" data-pts="5"><div class="stem">「此中人語云，不足『<b>為</b>』外人道也」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 對、向</li><li><span class="lab">(B)</span> 替</li><li><span class="lab">(C)</span> 因為</li><li><span class="lab">(D)</span> 是</li></ul></li>
+<li class="q" data-a="B" data-sec="p" data-pts="5"><div class="stem">「事在人『<b>為</b>』」的「為」，詞性與意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 介詞，被</li><li><span class="lab">(B)</span> 動詞，做、行</li><li><span class="lab">(C)</span> 介詞，因為</li><li><span class="lab">(D)</span> 動詞，是</li></ul></li>
+<li class="q" data-a="C" data-sec="p" data-pts="5"><div class="stem">「『<b>為</b>』政以德」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作</li><li><span class="lab">(B)</span> 是</li><li><span class="lab">(C)</span> 治理</li><li><span class="lab">(D)</span> 替</li></ul></li>
+<li class="q" data-a="A" data-sec="p" data-pts="5"><div class="stem">「以土礫凸者『<b>為</b>』丘」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作</li><li><span class="lab">(B)</span> 治理</li><li><span class="lab">(C)</span> 替</li><li><span class="lab">(D)</span> 被</li></ul></li>
+<li class="q" data-a="B" data-sec="p" data-pts="5"><div class="stem">「子游『<b>為</b>』武城宰」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作</li><li><span class="lab">(B)</span> 擔任</li><li><span class="lab">(C)</span> 是</li><li><span class="lab">(D)</span> 被</li></ul></li>
+<li class="q" data-a="B" data-sec="p" data-pts="5"><div class="stem">「二蟲盡『<b>為</b>』所吞」的「為」，用法是？</div><ul class="opts one"><li><span class="lab">(A)</span> 動詞，做</li><li><span class="lab">(B)</span> 介詞，表被動，被</li><li><span class="lab">(C)</span> 動詞，是</li><li><span class="lab">(D)</span> 介詞，替</li></ul></li>
+<li class="q" data-a="A" data-sec="p" data-pts="5"><div class="stem">「指鹿『<b>為</b>』馬」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作、作為</li><li><span class="lab">(B)</span> 替</li><li><span class="lab">(C)</span> 因為</li><li><span class="lab">(D)</span> 被</li></ul></li>
+<li class="q" data-a="C" data-sec="p" data-pts="5"><div class="stem">「失敗『<b>為</b>』成功之母」的「為」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 當作</li><li><span class="lab">(B)</span> 替</li><li><span class="lab">(C)</span> 是</li><li><span class="lab">(D)</span> 被</li></ul></li>
+<li class="q" data-a="B" data-sec="p" data-pts="5"><div class="stem">「閉門『<b>謝</b>』客」的「謝」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 辭別</li><li><span class="lab">(B)</span> 推卻、拒絕</li><li><span class="lab">(C)</span> 道歉</li><li><span class="lab">(D)</span> 凋零</li></ul></li>
+<li class="q" data-a="B" data-sec="p" data-pts="5"><div class="stem">「旦日不可不蚤自來『<b>謝</b>』項王」的「謝」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 感謝</li><li><span class="lab">(B)</span> 道歉、賠罪</li><li><span class="lab">(C)</span> 辭別</li><li><span class="lab">(D)</span> 詢問</li></ul></li>
+<li class="q" data-a="B" data-sec="p" data-pts="5"><div class="stem">「使君『<b>謝</b>』羅敷」的「謝」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 推卻</li><li><span class="lab">(B)</span> 詢問、問候</li><li><span class="lab">(C)</span> 感謝</li><li><span class="lab">(D)</span> 凋零</li></ul></li>
+<li class="q" data-a="A" data-sec="p" data-pts="5"><div class="stem">「新陳代『<b>謝</b>』」的「謝」，意思是？</div><ul class="opts"><li><span class="lab">(A)</span> 替代、更換</li><li><span class="lab">(B)</span> 辭別</li><li><span class="lab">(C)</span> 凋零</li><li><span class="lab">(D)</span> 道歉</li></ul></li>
 </ol>
-<p class="sec-score" data-sec="v"></p>
-<h3 class="lesson">成語練習</h3>
-<ol class="qs">
-<li class="q"><div class="stem">有人天馬行空地虛構情節，卻對眼前真實的事物視而不見，正符合下列何句？</div><ul class="opts"><li><span class="lab">(A)</span> 畫鬼容易畫人難</li><li><span class="lab">(B)</span> 一舉兩得</li><li><span class="lab">(C)</span> 嗟來之食</li><li><span class="lab">(D)</span> 弦歌不輟</li></ul></li>
-<li class="q"><div class="stem">老師僅僅一字之改，就讓詩句意境大不相同，這樣的老師可稱為？</div><ul class="opts"><li><span class="lab">(A)</span> 一字之師</li><li><span class="lab">(B)</span> 一舉兩得</li><li><span class="lab">(C)</span> 東施效顰</li><li><span class="lab">(D)</span> 肥水不落外人田</li></ul></li>
-<li class="q"><div class="stem">她盲目模仿偶像的穿搭，卻毫無自己的風格，反而更顯突兀，這正是哪個成語所形容的？</div><ul class="opts"><li><span class="lab">(A)</span> 暴虎馮河</li><li><span class="lab">(B)</span> 東施效顰</li><li><span class="lab">(C)</span> 一舉兩得</li><li><span class="lab">(D)</span> 嗟來之食</li></ul></li>
-<li class="q"><div class="stem">他不靠任何裝備，就想徒手挑戰懸崖，眾人都說他太＿＿了。</div><ul class="opts"><li><span class="lab">(A)</span> 暴虎馮河</li><li><span class="lab">(B)</span> 畫龍點睛</li><li><span class="lab">(C)</span> 一字之師</li><li><span class="lab">(D)</span> 弦歌不輟</li></ul></li>
-<li class="q"><div class="stem">他寧死也不願接受帶有侮辱意味的施捨，這樣的氣節典故出自於？</div><ul class="opts"><li><span class="lab">(A)</span> 嗟來之食</li><li><span class="lab">(B)</span> 一舉兩得</li><li><span class="lab">(C)</span> 東施效顰</li><li><span class="lab">(D)</span> 暴虎馮河</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="c"></p>
 </section>
 <section id="lessonqs">
-<h2 class="newpage">古文今讀 61–70 課　課文選擇題</h2>
+<h2 class="newpage">古文今讀 61–70 課　課文與選擇題</h2>
 <p class="infoline printonly">班級：＿＿＿＿　座號：＿＿＿＿　姓名：＿＿＿＿＿＿　　得分：＿＿＿＿</p>
-<p class="rule">課文文意選擇題（每課 4 題，每題 2.5 分，共 100 分）。</p>
-<h3 class="lesson">第61課　畫鬼最易<small>　《韓非子》</small></h3>
+<p class="rule">每課 4 題，每題 5 分，共 200 分。</p>
+<div class="lesson-block" style="--c:#e8590c">
+<h3 class="lesson" id="lesson-61">第61課　畫鬼最易<small>　《韓非子》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">客有為齊王畫者，齊王問曰：「畫孰最難者？」曰：「犬馬最難。」「孰易者？」曰：「鬼魅最易。」夫犬馬，人所知也，旦暮罄於前，不可類之，故難。鬼魅，無形者，不罄於前，故易之也。</p>
+<h4>📖 注釋</h4><p class="notes">①為：替　②孰：誰、什麼　③罄：出現在眼前　④類：相似　⑤鬼魅：妖魔鬼怪　⑥旦：早晨　⑦暮：傍晚</p>
+<h4>🗣 語譯</h4><p>有個客人替齊王作畫，齊王問他：「畫什麼東西最難？」客人回答：「狗、馬最難畫。」齊王又問：「畫什麼最容易？」客人說：「鬼怪最容易。」狗、馬是人人都認得的，從早到晚都出現在人們眼前，不能只畫得相似，所以難畫；鬼怪是沒有固定形體的，不會出現在人們眼前，所以容易畫。</p>
+<h4>📚 成語教室</h4><p>「畫鬼最易」點出：越是常見、人人熟悉的事物，越難只求形似，反而虛構、無人見過的事物容易蒙混過關。 補充：「畫鬼容易畫人難」——比喻虛構或沒人見過的事物容易描繪，而真實且熟悉的事物需要極深的功底才能精準呈現。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="B" data-sec="l61" data-pts="5"><div class="stem">客人認為畫什麼「最難」？</div><ul class="opts"><li><span class="lab">(A)</span> 鬼魅</li><li><span class="lab">(B)</span> 犬馬</li><li><span class="lab">(C)</span> 山水</li><li><span class="lab">(D)</span> 花鳥</li></ul></li>
+<li class="q" data-a="C" data-sec="l61" data-pts="5"><div class="stem">客人認為畫什麼「最易」？</div><ul class="opts"><li><span class="lab">(A)</span> 犬馬</li><li><span class="lab">(B)</span> 人物</li><li><span class="lab">(C)</span> 鬼魅</li><li><span class="lab">(D)</span> 蟲魚</li></ul></li>
+<li class="q" data-a="B" data-sec="l61" data-pts="5"><div class="stem">犬馬之所以難畫，是因為：</div><ul class="opts one"><li><span class="lab">(A)</span> 顏色太多</li><li><span class="lab">(B)</span> 人人都熟悉牠們的樣子，難以只求形似</li><li><span class="lab">(C)</span> 體型太大</li><li><span class="lab">(D)</span> 會動不易觀察</li></ul></li>
+<li class="q" data-a="B" data-sec="l61" data-pts="5"><div class="stem">鬼魅之所以易畫，關鍵在於：</div><ul class="opts one"><li><span class="lab">(A)</span> 顏色鮮豔</li><li><span class="lab">(B)</span> 沒有固定形體，不會出現在眼前供人比對</li><li><span class="lab">(C)</span> 筆畫簡單</li><li><span class="lab">(D)</span> 前人已有範本</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#2f9e44">
+<h3 class="lesson" id="lesson-62">第62課　一字師<small>　《五代史補》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">鄭谷在袁州，齊己攜詩往謁焉。有〈早梅詩〉曰：「前村深雪裡，昨夜數枝開。」谷笑曰：「數枝非早也，未若一枝佳。」齊己矍然，不覺兼三禮拜。自是士林以谷為一字之師。</p>
+<h4>📖 注釋</h4><p class="notes">①攜：帶著　②謁：拜訪　③矍然：驚訝、驚喜的樣子　④士林：讀書人、學術界　⑤一字之師：能指點一字之誤、使詩文更臻完美的老師</p>
+<h4>🗣 語譯</h4><p>鄭谷住在袁州，齊己帶著自己的詩作前去拜訪他。齊己有一首〈早梅詩〉，其中兩句是：「前村深雪裡，昨夜數枝開。」鄭谷笑著說：「『數枝』開花就不算早了，不如改成『一枝』才好。」齊己聽了十分驚喜，忍不住向鄭谷行了好幾次禮。從此讀書人便稱鄭谷為「一字之師」。</p>
+<h4>📚 成語教室</h4><p>鄭谷僅改一字，就讓「早梅」之「早」意更加精確傳神，說明煉字對詩意的巨大影響。 名句：疏影橫斜水清淺，暗香浮動月黃昏（林逋〈山園小梅〉）——疏淡的梅影橫斜映在清淺的池水裡，清幽的香氣在朦朧的月色中飄散，是詠梅的千古名句。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="B" data-sec="l62" data-pts="5"><div class="stem">齊己原本的詩句是「前村深雪裡，昨夜＿枝開」？</div><ul class="opts"><li><span class="lab">(A)</span> 一</li><li><span class="lab">(B)</span> 數</li><li><span class="lab">(C)</span> 數十</li><li><span class="lab">(D)</span> 滿</li></ul></li>
+<li class="q" data-a="B" data-sec="l62" data-pts="5"><div class="stem">齊己聽了鄭谷的建議後，反應是？</div><ul class="opts one"><li><span class="lab">(A)</span> 生氣反駁，不肯接受</li><li><span class="lab">(B)</span> 十分驚喜，忍不住行禮拜謝</li><li><span class="lab">(C)</span> 毫不在意，沒有回應</li><li><span class="lab">(D)</span> 立刻離開，不再往來</li></ul></li>
+<li class="q" data-a="B" data-sec="l62" data-pts="5"><div class="stem">鄭谷認為改成「一枝開」較好，理由是：</div><ul class="opts one"><li><span class="lab">(A)</span> 字形較美</li><li><span class="lab">(B)</span> 「一枝」才更能表現「早」開之意</li><li><span class="lab">(C)</span> 音韻較順</li><li><span class="lab">(D)</span> 筆畫較少</li></ul></li>
+<li class="q" data-a="A" data-sec="l62" data-pts="5"><div class="stem">林逋〈山園小梅〉「疏影橫斜水清淺，暗香浮動月黃昏」所描寫的意境是？</div><ul class="opts one"><li><span class="lab">(A)</span> 梅影橫斜映水中，梅香在月色下幽幽飄散，清幽脫俗</li><li><span class="lab">(B)</span> 梅花凋謝滿地，一片蕭瑟</li><li><span class="lab">(C)</span> 大雪紛飛，梅花凍僵</li><li><span class="lab">(D)</span> 賓客雲集賞梅，熱鬧非凡</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#1c7ed6">
+<h3 class="lesson" id="lesson-63">第63課　楚弓楚得<small>　《說苑》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">楚共王出獵而遺其弓，左右請求之。王曰：「止！楚人遺弓，楚人得之，又何求焉！」仲尼聞之曰：「惜乎其不大也！不曰『人遺弓，人得之』而已，何必楚也？」</p>
+<h4>📖 注釋</h4><p class="notes">①遺：遺失　②止：不用了　③求：尋找　④惜：可惜　⑤仲尼：孔子　⑥聞：聽到　⑦大公：公平無私到極點</p>
+<h4>🗣 語譯</h4><p>楚共王出外打獵時遺失了弓，隨從要去尋找，楚王說：「算了！楚國人遺失了弓，還是楚國人撿到，又何必去找呢！」孔子聽到這件事後說：「可惜他的胸襟還不夠大啊！何不說『人遺失了弓，人撿到了』就好，何必說『楚』呢？」</p>
+<h4>📚 成語教室</h4><p>楚共王的「楚人遺弓，楚人得之」已算大度，但孔子認為真正的大公無私應去除「楚」的界線，及於天下人。 諺語：肥水不落外人田——比喻好處不落入外人之手，都留給自己人。 名句：登東山而小魯，登泰山而小天下（《孟子．盡心上》）——登上東山，就覺得魯國變小了；登上泰山，就覺得天下都變小了；比喻站得越高，眼界越開闊，看待事物的格局也越大，與孔子期許楚王胸襟更加寬廣的道理相通。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="A" data-sec="l63" data-pts="5"><div class="stem">「楚弓楚得」這句話比喻什麼？</div><ul class="opts one"><li><span class="lab">(A)</span> 東西雖然遺失，仍在自己人手中，不須計較</li><li><span class="lab">(B)</span> 做事要謹慎小心，考慮周全</li><li><span class="lab">(C)</span> 勇於認錯、知過能改的精神</li><li><span class="lab">(D)</span> 知恩圖報，禮尚往來</li></ul></li>
+<li class="q" data-a="B" data-sec="l63" data-pts="5"><div class="stem">楚共王對遺失弓的態度是：</div><ul class="opts one"><li><span class="lab">(A)</span> 派人到別國尋找</li><li><span class="lab">(B)</span> 不用找了，楚人失、楚人得</li><li><span class="lab">(C)</span> 非常憤怒</li><li><span class="lab">(D)</span> 要求侍從賠償</li></ul></li>
+<li class="q" data-a="B" data-sec="l63" data-pts="5"><div class="stem">孔子認為楚共王「惜乎其不大也」，意思是：</div><ul class="opts one"><li><span class="lab">(A)</span> 可惜他不夠高大</li><li><span class="lab">(B)</span> 可惜他的胸襟不夠廣大、私心未除</li><li><span class="lab">(C)</span> 可惜他不夠有錢</li><li><span class="lab">(D)</span> 可惜他年紀太小</li></ul></li>
+<li class="q" data-a="B" data-sec="l63" data-pts="5"><div class="stem">孔子主張應該怎麼說，才是真正的大公無私？</div><ul class="opts one"><li><span class="lab">(A)</span> 楚人遺弓，楚人得之</li><li><span class="lab">(B)</span> 人遺弓，人得之</li><li><span class="lab">(C)</span> 王遺弓，王得之</li><li><span class="lab">(D)</span> 各憑本事，誰撿歸誰</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#ae3ec9">
+<h3 class="lesson" id="lesson-64">第64課　醜女效顰<small>　《莊子》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">西施病心而顰其里，其里之醜人見而美之，歸亦捧心而顰其里。其里之富人見之，堅閉門而不出；貧人見之，挈妻子而去之走。彼知顰美，而不知顰之所以美。</p>
+<h4>📖 注釋</h4><p class="notes">①顰：皺眉頭　②里：鄉里　③挈：帶領、帶著　④美之：認為她很美　⑤堅閉門：緊閉家門</p>
+<h4>🗣 語譯</h4><p>西施因為心口疼痛，皺著眉頭走過村子，同村一位容貌不佳的女子看見了，覺得這樣子很美，回去後也學著西施捧心皺眉的樣子。鄉里的富人看到了，緊閉家門不出來；窮人看到了，帶著妻子兒女躲得遠遠的。醜女只知道皺眉頭很美，卻不知道西施皺眉之所以美的真正原因。</p>
+<h4>📚 成語教室</h4><p>醜人只學到表面動作，卻不明白西施之美源於她本身的姿容氣質，一味模仿反而弄巧成拙。 成語：東施效顰——比喻不衡量自身條件而一味模仿他人，反而弄巧成拙。畫虎不成反類狗——比喻仿效他人不到家，反而變得不倫不類。 文章結構：先敘後議——先敘述西施顰眉與醜人效顰的故事經過，再以「彼知顰美，而不知顰之所以美」提出評議與觀點。 補充：文言文第三人稱代詞——彼（他，指醜人，如「彼知顰美」）、其（他的／他，如「其里」「其里之富人」）。 補充：形容女子容貌美麗的相關成語——沉魚落雁（形容女子容貌美好，使魚沉入水底、雁降落沙洲）、閉月羞花（形容女子容貌美麗，使月亮躲藏、花朵羞愧）、傾國傾城（形容女子容貌極為美麗，使全國人都為之傾倒愛慕）、國色天香（形容女子容貌美麗高貴，如牡丹花一般）。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="A" data-sec="l64" data-pts="5"><div class="stem">西施皺眉頭的原因是：</div><ul class="opts"><li><span class="lab">(A)</span> 心口疼痛</li><li><span class="lab">(B)</span> 刻意扮美</li><li><span class="lab">(C)</span> 生氣</li><li><span class="lab">(D)</span> 害羞</li></ul></li>
+<li class="q" data-a="A" data-sec="l64" data-pts="5"><div class="stem">醜人模仿西施的舉動是：</div><ul class="opts"><li><span class="lab">(A)</span> 捧心而顰</li><li><span class="lab">(B)</span> 微笑揮手</li><li><span class="lab">(C)</span> 披頭散髮</li><li><span class="lab">(D)</span> 穿華服出門</li></ul></li>
+<li class="q" data-a="B" data-sec="l64" data-pts="5"><div class="stem">富人和貧人見到醜人模仿後的反應是：</div><ul class="opts one"><li><span class="lab">(A)</span> 紛紛稱讚</li><li><span class="lab">(B)</span> 閉門不出／帶家人躲避</li><li><span class="lab">(C)</span> 上前請教</li><li><span class="lab">(D)</span> 毫無反應</li></ul></li>
+<li class="q" data-a="C" data-sec="l64" data-pts="5"><div class="stem">本文最終要說明的道理是：</div><ul class="opts one"><li><span class="lab">(A)</span> 西施最美</li><li><span class="lab">(B)</span> 醜人也可以變美</li><li><span class="lab">(C)</span> 只學表面、不知其所以然，反而弄巧成拙</li><li><span class="lab">(D)</span> 鄉里人沒有審美觀</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#d6336c">
+<h3 class="lesson" id="lesson-65">第65課　宣王好射<small>　《呂氏春秋》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">齊宣王好射，說人之謂己能用強弓也。其實所用不過三石，以示左右，左右皆試引之，中關而止，皆曰：「此不下九石，非王其孰能用是？」宣王悅之。然則宣王之情，所用不過三石，而終身自以為九石。豈不悲哉？</p>
+<h4>📖 注釋</h4><p class="notes">①說：通「悅」，喜歡　②彊：強　③石：古代計算弓力的單位　④引：拉弓　⑤中關：拉到一半　⑥情：實際情況　⑦悲：可悲</p>
+<h4>🗣 語譯</h4><p>齊宣王喜歡射箭，喜歡聽別人說自己能拉開強弓。其實他所用的弓不超過三石，卻拿給身邊的人看，身邊的人都試著拉弓，拉到一半就故意停下，都說：「這弓的拉力不下九石，除了大王，誰能拉得動呢？」宣王聽了非常高興。然而事實上，宣王所用的弓不超過三石，卻一輩子都以為自己用的是九石重的弓，這不是很可悲嗎？</p>
+<h4>📚 成語教室</h4><p>旁人的刻意奉承，讓宣王終身活在虛假的自我評價中而不自知，作者以「豈不悲哉」點出被奉承蒙蔽的可悲。 諺語：暴虎馮河——指空手與虎搏鬥、不靠舟船渡河，比喻人有勇而無謀，只逞匹夫之勇。 文章結構：先敘後議——先敘述宣王愛用強弓、被左右奉承的經過，再以「豈不悲哉」呈現作者對此事的評論與觀點。 補充成語：匹夫之勇（指不用智謀，只憑一己血氣之勇）、班門弄斧（在巧匠魯班門前賣弄使用斧頭的技術，比喻在行家面前賣弄本事，不自量力）。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="A" data-sec="l65" data-pts="5"><div class="stem">齊宣王實際使用的弓力是多少石？</div><ul class="opts"><li><span class="lab">(A)</span> 三石</li><li><span class="lab">(B)</span> 六石</li><li><span class="lab">(C)</span> 九石</li><li><span class="lab">(D)</span> 十二石</li></ul></li>
+<li class="q" data-a="B" data-sec="l65" data-pts="5"><div class="stem">左右侍從故意拉弓「中關而止」的目的是：</div><ul class="opts one"><li><span class="lab">(A)</span> 體力不夠</li><li><span class="lab">(B)</span> 刻意奉承宣王，讓他誤以為弓力驚人</li><li><span class="lab">(C)</span> 弓有瑕疵</li><li><span class="lab">(D)</span> 天氣太熱</li></ul></li>
+<li class="q" data-a="B" data-sec="l65" data-pts="5"><div class="stem">宣王「終身自以為九石」，反映出他：</div><ul class="opts one"><li><span class="lab">(A)</span> 謙虛謹慎</li><li><span class="lab">(B)</span> 被奉承蒙蔽，看不清事實真相</li><li><span class="lab">(C)</span> 武藝高強</li><li><span class="lab">(D)</span> 不喜歡射箭</li></ul></li>
+<li class="q" data-a="B" data-sec="l65" data-pts="5"><div class="stem">本文作者以「豈不悲哉」作結，用意在：</div><ul class="opts one"><li><span class="lab">(A)</span> 讚美宣王的臂力</li><li><span class="lab">(B)</span> 感嘆世人常安於虛名，不願面對真相</li><li><span class="lab">(C)</span> 描寫射箭技巧</li><li><span class="lab">(D)</span> 介紹弓的種類</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#e8590c">
+<h3 class="lesson" id="lesson-66">第66課　王勃腹稿<small>　《初潭集》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">王勃所至，請託為文，金帛豐積，人謂心織舌耕。每屬稿，必先磨墨數升，則酣飲，引被覆面而臥；及寤，援筆成篇，不易一字，時人謂之「腹稿」。</p>
+<h4>📖 注釋</h4><p class="notes">①勃：唐代文學家王勃　②屬稿：寫初稿　③覆：蓋　④援筆：提筆　⑤易：修改　⑥腹稿：事先在心中構思好，一動筆便一氣呵成的文稿</p>
+<h4>🗣 語譯</h4><p>王勃所到之處，人們常請託他寫文章，因此金銀綢緞收穫豐富，人們稱他是「心織舌耕」，比喻他靠寫作維生，才思猶如耕作般勤奮而豐收。他每次要動筆寫文章前，一定先磨好幾升的墨，然後開懷暢飲，拉起被子蒙頭而睡；一覺醒來，提筆一氣呵成，文不加點，一個字都不必修改，當時人稱這種寫作方式為「腹稿」。</p>
+<h4>📚 成語教室</h4><p>「腹稿」形容王勃寫作前已在心中構思完成，動筆便一氣呵成，展現他過人的文思與才氣。 名句：讀書破萬卷，下筆如有神（杜甫）——多讀優秀的作品，便能從中受到教育、啟發，進而增長才能，提筆為文也能如有神助。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="B" data-sec="l66" data-pts="5"><div class="stem">王勃寫文章前的習慣是：</div><ul class="opts one"><li><span class="lab">(A)</span> 先散步構思</li><li><span class="lab">(B)</span> 先磨墨、暢飲，蒙頭而睡</li><li><span class="lab">(C)</span> 先請教老師</li><li><span class="lab">(D)</span> 先查閱古書</li></ul></li>
+<li class="q" data-a="B" data-sec="l66" data-pts="5"><div class="stem">「腹稿」的意思是：</div><ul class="opts one"><li><span class="lab">(A)</span> 寫在腹部的草稿</li><li><span class="lab">(B)</span> 事先在心中構思好，動筆便一氣呵成</li><li><span class="lab">(C)</span> 請人代筆的文章</li><li><span class="lab">(D)</span> 反覆修改多次的文章</li></ul></li>
+<li class="q" data-a="B" data-sec="l66" data-pts="5"><div class="stem">「不易一字」形容王勃寫作：</div><ul class="opts one"><li><span class="lab">(A)</span> 字跡潦草</li><li><span class="lab">(B)</span> 文思泉湧、一氣呵成、不必修改</li><li><span class="lab">(C)</span> 字數很少</li><li><span class="lab">(D)</span> 常抄襲古人</li></ul></li>
+<li class="q" data-a="B" data-sec="l66" data-pts="5"><div class="stem">「心織舌耕」是形容王勃：</div><ul class="opts one"><li><span class="lab">(A)</span> 擅長織布刺繡</li><li><span class="lab">(B)</span> 文思巧妙，靠寫作維生如同耕作般辛勤豐收</li><li><span class="lab">(C)</span> 口才極差</li><li><span class="lab">(D)</span> 不擅寫作</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#2f9e44">
+<h3 class="lesson" id="lesson-67">第67課　一舉兩得<small>　《戰國策》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">有兩虎爭人而鬥者，管莊子將刺之，管與止之曰：「虎者，戾蟲；人者，甘餌也。今兩虎爭人而鬥，小者必死，大者必傷。子待傷虎而刺之，則是一舉而兩虎之名。」</p>
+<h4>📖 注釋</h4><p class="notes">①爭：爭食　②鬥：打鬥　③戾蟲：兇暴的動物　④甘餌：美味的食物　⑤刺：殺　⑥待：等待</p>
+<h4>🗣 語譯</h4><p>有兩隻老虎為了爭食一個人而互相打鬥，管莊子準備上前刺殺牠們。有人阻止他說：「老虎是兇暴的動物，人是牠們喜愛的食物。現在兩隻老虎爭著吃人而互相搏鬥，弱小的必定會死，強壯的也必定會受傷。你只要等待受傷的老虎，再上前刺殺牠，就能一次獲得殺死兩隻老虎的美名了。」</p>
+<h4>📚 成語教室</h4><p>旁人建議管莊子等兩虎兩敗俱傷後再出手，便能以最小的力氣獲得殺死兩虎的美名，說明善用時機、坐收其利的智慧。 成語：一舉兩得——比喻做一件事，同時獲得兩種好處，與「坐收漁翁之利」意近。 補充：文言文第二人稱代詞——汝、爾、子、若、君，都可譯為「你」。 補充成語：香餌之下必有懸魚（比喻只要有利可圖，必定有人願意冒險嘗試）、鷸蚌相爭，漁翁得利（比喻雙方爭執不下，反而讓第三者從中得利）、不入虎穴，焉得虎子（比喻不冒險犯難，就無法獲得成功）、不經一事，不長一智（不經歷一件事，就不能增長一分智慧）。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="B" data-sec="l67" data-pts="5"><div class="stem">兩隻老虎打鬥的原因是：</div><ul class="opts"><li><span class="lab">(A)</span> 爭奪地盤</li><li><span class="lab">(B)</span> 爭食同一個人</li><li><span class="lab">(C)</span> 爭配偶</li><li><span class="lab">(D)</span> 互相報復</li></ul></li>
+<li class="q" data-a="B" data-sec="l67" data-pts="5"><div class="stem">有人建議管莊子怎麼做，才是聰明的策略？</div><ul class="opts one"><li><span class="lab">(A)</span> 立刻上前刺殺兩虎</li><li><span class="lab">(B)</span> 等兩虎相鬥兩敗俱傷後，再刺殺受傷的老虎</li><li><span class="lab">(C)</span> 放棄不管</li><li><span class="lab">(D)</span> 找人幫忙一起攻擊</li></ul></li>
+<li class="q" data-a="A" data-sec="l67" data-pts="5"><div class="stem">這樣做的好處是：</div><ul class="opts one"><li><span class="lab">(A)</span> 可以省下力氣，一次獲得殺死兩虎的美名</li><li><span class="lab">(B)</span> 可以馴養老虎</li><li><span class="lab">(C)</span> 可以避免受傷</li><li><span class="lab">(D)</span> 可以讓兩虎和解</li></ul></li>
+<li class="q" data-a="A" data-sec="l67" data-pts="5"><div class="stem">本文所說明的策略近似於哪一句成語？</div><ul class="opts"><li><span class="lab">(A)</span> 坐收漁翁之利</li><li><span class="lab">(B)</span> 亡羊補牢</li><li><span class="lab">(C)</span> 畫蛇添足</li><li><span class="lab">(D)</span> 刻舟求劍</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#1c7ed6">
+<h3 class="lesson" id="lesson-68">第68課　割雞焉用牛刀<small>　《論語》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">子之武城，聞弦歌之聲。夫子莞爾而笑，曰：「割雞焉用牛刀？」子游對曰：「昔者偃也聞諸夫子曰：『君子學道則愛人，小人學道則易使也。』」子曰：「二三子！偃之言是也，前言戲之耳。」</p>
+<h4>📖 注釋</h4><p class="notes">①武城：地名，子游治理的地方　②弦歌：以琴瑟伴奏歌唱，象徵以禮樂教化百姓　③莞爾：微笑的樣子　④偃：子游自稱　⑤戲：開玩笑</p>
+<h4>🗣 語譯</h4><p>孔子到了武城，聽到彈琴唱歌的聲音。孔子微微一笑，說：「殺雞何必用宰牛的刀？」子游回答說：「以前我聽老師說過：『在上位的人學習禮樂就會愛護人民，在下位的人學習禮樂就容易聽從使喚。』」孔子說：「各位同學！偃的話是對的，我剛才只是跟他開玩笑罷了。」</p>
+<h4>📚 成語教室</h4><p>孔子原以為治理小小的武城不必大費周章推行禮樂教化，子游卻以「君子學道則愛人」回應，孔子隨即收回玩笑話，肯定禮樂教化不分大小地方皆有益處。 成語：弦歌不輟——比喻政治清明，禮樂教化普及。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="B" data-sec="l68" data-pts="5"><div class="stem">孔子到武城「莞爾而笑」，是因為聽到了什麼聲音？</div><ul class="opts"><li><span class="lab">(A)</span> 哭泣聲</li><li><span class="lab">(B)</span> 弦歌之聲</li><li><span class="lab">(C)</span> 爭吵聲</li><li><span class="lab">(D)</span> 鑼鼓聲</li></ul></li>
+<li class="q" data-a="A" data-sec="l68" data-pts="5"><div class="stem">孔子「割雞焉用牛刀」的言外之意是：</div><ul class="opts one"><li><span class="lab">(A)</span> 治理小地方，何必大費周章用禮樂教化</li><li><span class="lab">(B)</span> 武城的雞很難殺</li><li><span class="lab">(C)</span> 子游沒有牛刀</li><li><span class="lab">(D)</span> 子游太浪費食材</li></ul></li>
+<li class="q" data-a="A" data-sec="l68" data-pts="5"><div class="stem">子游引述孔子教誨「君子學道則愛人，小人學道則易使也」，說明的是：</div><ul class="opts one"><li><span class="lab">(A)</span> 禮樂教化對上下位者皆有益處</li><li><span class="lab">(B)</span> 只有君子需要學習</li><li><span class="lab">(C)</span> 小人不必學習</li><li><span class="lab">(D)</span> 音樂沒有教化功能</li></ul></li>
+<li class="q" data-a="A" data-sec="l68" data-pts="5"><div class="stem">孔子最後說「前言戲之耳」，顯示他：</div><ul class="opts one"><li><span class="lab">(A)</span> 收回自己的玩笑話，肯定子游做法正確</li><li><span class="lab">(B)</span> 真心認為子游做錯了</li><li><span class="lab">(C)</span> 生氣責備子游</li><li><span class="lab">(D)</span> 後悔到武城</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#ae3ec9">
+<h3 class="lesson" id="lesson-69">第69課　石學士<small>　《冷齋夜話》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">石學士曼卿嘗出遊報慈寺，馭者失控，馬驚，曼卿墜於地。左右驚扶，恐曼卿有慍色，曼卿徐曰：「賴我石學士，若他人皮骨已損矣。」市人皆稱幸。</p>
+<h4>📖 注釋</h4><p class="notes">①曼卿：北宋文學家石延年　②嘗：曾經　③馭：駕馭馬匹　④扶：扶起　⑤慍：生氣　⑥徐：慢慢地　⑦賴：幸虧、幸好　⑧意（通「臆」）：動詞，臆測、猜測（如：意其必大詬——猜想他一定會大罵）　⑨若：連詞，假設語氣，如果（如：若他人皮骨已損矣）</p>
+<h4>🗣 語譯</h4><p>石學士曼卿曾經出遊到報慈寺，馬夫沒有控制好，馬受到驚嚇，曼卿從馬背上摔了下來。旁邊的人急忙驚慌地扶起他，擔心他會生氣，曼卿卻慢條斯理地說：「幸好我是石學士，如果換作是別人，恐怕皮骨都要摔傷了。」市集裡的人聽了都稱讚他豁達、幸運。</p>
+<h4>📚 成語教室</h4><p>石曼卿墜馬後不僅不生氣，反而幽默自嘲、化解眾人的擔憂，展現豁達的胸襟與機智。 人物側寫：石曼卿個性幽默風趣、善解人意，遇事能自我解嘲，化解他人的擔憂。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="B" data-sec="l69" data-pts="5"><div class="stem">石曼卿墜馬的原因是：</div><ul class="opts one"><li><span class="lab">(A)</span> 自己不小心</li><li><span class="lab">(B)</span> 馬夫失控，馬受驚</li><li><span class="lab">(C)</span> 路面濕滑</li><li><span class="lab">(D)</span> 遭人陷害</li></ul></li>
+<li class="q" data-a="A" data-sec="l69" data-pts="5"><div class="stem">旁人扶起石曼卿時，內心擔心的是：</div><ul class="opts"><li><span class="lab">(A)</span> 他會生氣責怪</li><li><span class="lab">(B)</span> 他會大笑</li><li><span class="lab">(C)</span> 他會立刻離開</li><li><span class="lab">(D)</span> 他會要求賠償</li></ul></li>
+<li class="q" data-a="B" data-sec="l69" data-pts="5"><div class="stem">石曼卿「賴我石學士，若他人皮骨已損矣」這句話展現他：</div><ul class="opts one"><li><span class="lab">(A)</span> 自誇武藝高強</li><li><span class="lab">(B)</span> 幽默自嘲，化解尷尬場面</li><li><span class="lab">(C)</span> 責怪馬夫</li><li><span class="lab">(D)</span> 誇耀自己身分尊貴</li></ul></li>
+<li class="q" data-a="B" data-sec="l69" data-pts="5"><div class="stem">市人「皆稱幸」，稱幸的原因最可能是：</div><ul class="opts one"><li><span class="lab">(A)</span> 慶幸馬沒有受傷</li><li><span class="lab">(B)</span> 佩服石曼卿幽默的胸襟、化險為夷</li><li><span class="lab">(C)</span> 慶幸自己沒被波及</li><li><span class="lab">(D)</span> 慶幸寺廟沒有損壞</li></ul></li></ol>
+</div>
+<div class="lesson-block" style="--c:#d6336c">
+<h3 class="lesson" id="lesson-70">第70課　嗟來之食<small>　《禮記．檀弓》</small></h3>
+<div class="lt"><h4>📜 原文</h4><p class="orig">齊大饑，黔敖為食於路，以待餓者而食之。有餓者，蒙袂輯屨，貿貿然來。黔敖左奉食，右執飲，曰：「嗟！來食！」揚其目而視之，曰：「予唯不食嗟來之食，以至於斯也！」從而謝焉，終不食而死。</p>
+<h4>📖 注釋</h4><p class="notes">①黔敖：人名　②蒙袂：用衣袖遮著臉　③輯屨：拖著鞋子　④貿貿然：眼睛看不清、搖搖晃晃的樣子　⑤嗟：感嘆詞，喂　⑥予：我，自謙之詞　⑦斯：這個地步　⑧謝：道歉</p>
+<h4>🗣 語譯</h4><p>齊國發生嚴重饑荒，黔敖在路邊準備食物，等待飢餓的人來吃。有個飢餓的人，用衣袖遮著臉，拖著鞋子，搖搖晃晃地走來。黔敖左手捧著食物，右手端著湯，說：「喂！來吃吧！」飢餓的人抬起眼睛看著他，說：「我就是不願吃這種帶有侮辱意味、呼喝施捨的食物，才會餓成這個樣子！」黔敖於是向他道歉，但那人終究不肯吃，最後餓死了。</p>
+<h4>📚 成語教室</h4><p>饑餓者寧死也不接受帶有輕蔑口氣的施捨，展現「不食嗟來之食」的氣節與尊嚴。 成語：嗟來之食——指帶有輕蔑、侮辱性質的施捨；比喻寧可餓死，也不接受侮辱性的幫助。 補充：文言文第一人稱代詞——予、余、吾，皆可譯為「我」。 補充：自謙用語——愚、某、僕，皆可用來謙稱自己。 補充：屨（ㄐㄩˋ）、屣（ㄒㄧˇ）、履（ㄌㄩˇ）三字都通「鞋」，如「輯屨」即拖著鞋子、「棄之如敝屣」即丟棄破鞋一般。</p>
+<h4>📝 隨堂練習</h4></div>
+<ol class="qs"><li class="q" data-a="B" data-sec="l70" data-pts="5"><div class="stem">黔敖準備食物的背景是：</div><ul class="opts one"><li><span class="lab">(A)</span> 慶祝豐收</li><li><span class="lab">(B)</span> 齊國發生嚴重饑荒</li><li><span class="lab">(C)</span> 招待貴賓</li><li><span class="lab">(D)</span> 祭祀祖先</li></ul></li>
+<li class="q" data-a="B" data-sec="l70" data-pts="5"><div class="stem">黔敖呼喚饑餓者的方式，讓對方感到：</div><ul class="opts one"><li><span class="lab">(A)</span> 備受尊重</li><li><span class="lab">(B)</span> 帶有輕蔑、施捨式的口氣，令人不悅</li><li><span class="lab">(C)</span> 非常親切</li><li><span class="lab">(D)</span> 毫無感覺</li></ul></li>
+<li class="q" data-a="B" data-sec="l70" data-pts="5"><div class="stem">饑餓者「終不食而死」，顯示他重視的是：</div><ul class="opts one"><li><span class="lab">(A)</span> 食物的美味</li><li><span class="lab">(B)</span> 個人的尊嚴，不願接受侮辱性的施捨</li><li><span class="lab">(C)</span> 黔敖的身分地位</li><li><span class="lab">(D)</span> 食物的份量</li></ul></li>
+<li class="q" data-a="B" data-sec="l70" data-pts="5"><div class="stem">「嗟來之食」後來用來比喻：</div><ul class="opts one"><li><span class="lab">(A)</span> 豐盛的宴席</li><li><span class="lab">(B)</span> 帶有侮辱性質的施捨</li><li><span class="lab">(C)</span> 自己種植的食物</li><li><span class="lab">(D)</span> 皇帝賞賜的食物</li></ul></li></ol>
+</div>
+</section>
+<section id="idioms">
+<div class="zi-block" style="--c:#F08C00">
+<h2>成語精選</h2>
+<div class="idiom-list">
+<h4 class="idiom-group">第61課　畫鬼最易</h4>
+<div class="idiom-card"><span class="idiom-no">1</span><div class="idiom-body"><div class="idiom-term">畫鬼容易畫人難</div><div class="idiom-def">比喻虛構或沒人見過的事物容易描繪，而真實且熟悉的事物需要極深的功底才能精準呈現。</div></div></div>
+<h4 class="idiom-group">第62課　一字師</h4>
+<div class="idiom-card"><span class="idiom-no">2</span><div class="idiom-body"><div class="idiom-term">一字之師</div><div class="idiom-def">能指點一字之誤，使詩文更臻完美的人。</div></div></div>
+<h4 class="idiom-group">第63課　楚弓楚得</h4>
+<div class="idiom-card"><span class="idiom-no">3</span><div class="idiom-body"><div class="idiom-term">肥水不落外人田</div><div class="idiom-def">比喻好處不落入外人之手，都留給自己人。</div></div></div>
+<h4 class="idiom-group">第64課　醜女效顰</h4>
+<div class="idiom-card"><span class="idiom-no">4</span><div class="idiom-body"><div class="idiom-term">東施效顰</div><div class="idiom-def">比喻不衡量自身條件而一味模仿他人，反而弄巧成拙。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">5</span><div class="idiom-body"><div class="idiom-term">畫虎不成反類狗</div><div class="idiom-def">比喻仿效他人不到家，反而變得不倫不類。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">6</span><div class="idiom-body"><div class="idiom-term">沉魚落雁</div><div class="idiom-def">形容女子容貌美好，使魚沉入水底、雁降落沙洲。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">7</span><div class="idiom-body"><div class="idiom-term">閉月羞花</div><div class="idiom-def">形容女子容貌美麗，使月亮躲藏、花朵羞愧。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">8</span><div class="idiom-body"><div class="idiom-term">傾國傾城</div><div class="idiom-def">形容女子容貌極為美麗，使全國人都為之傾倒愛慕。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">9</span><div class="idiom-body"><div class="idiom-term">國色天香</div><div class="idiom-def">形容女子容貌美麗高貴，如牡丹花一般。</div></div></div>
+<h4 class="idiom-group">第65課　宣王好射</h4>
+<div class="idiom-card"><span class="idiom-no">10</span><div class="idiom-body"><div class="idiom-term">暴虎馮河</div><div class="idiom-def">暴，徒手搏鬥；馮，徒步渡河。指空手與虎搏鬥，不靠舟船渡河，比喻人有勇而無謀。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">11</span><div class="idiom-body"><div class="idiom-term">匹夫之勇</div><div class="idiom-def">指不用智謀，只憑一己血氣之勇。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">12</span><div class="idiom-body"><div class="idiom-term">班門弄斧</div><div class="idiom-def">在巧匠魯班門前賣弄使用斧頭的技術，比喻在行家面前賣弄本事，不自量力。</div></div></div>
+<h4 class="idiom-group">第67課　一舉兩得</h4>
+<div class="idiom-card"><span class="idiom-no">13</span><div class="idiom-body"><div class="idiom-term">一舉兩得</div><div class="idiom-def">比喻做一件事，同時獲得兩種好處。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">14</span><div class="idiom-body"><div class="idiom-term">坐收漁翁之利</div><div class="idiom-def">比喻雙方爭執不下，讓第三者從中得利。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">15</span><div class="idiom-body"><div class="idiom-term">香餌之下必有懸魚</div><div class="idiom-def">比喻只要有利可圖，必定有人願意冒險嘗試。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">16</span><div class="idiom-body"><div class="idiom-term">鷸蚌相爭，漁翁得利</div><div class="idiom-def">比喻雙方爭執不下，反而讓第三者從中得利。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">17</span><div class="idiom-body"><div class="idiom-term">不入虎穴，焉得虎子</div><div class="idiom-def">比喻不冒險犯難，就無法獲得成功。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">18</span><div class="idiom-body"><div class="idiom-term">不經一事，不長一智</div><div class="idiom-def">不經歷一件事，就不能增長一分智慧。</div></div></div>
+<h4 class="idiom-group">第68課　割雞焉用牛刀</h4>
+<div class="idiom-card"><span class="idiom-no">19</span><div class="idiom-body"><div class="idiom-term">弦歌不輟</div><div class="idiom-def">比喻政治清明，禮樂教化普及。</div></div></div>
+<h4 class="idiom-group">第70課　嗟來之食</h4>
+<div class="idiom-card"><span class="idiom-no">20</span><div class="idiom-body"><div class="idiom-term">嗟來之食</div><div class="idiom-def">指帶有輕蔑、侮辱性質的施捨；比喻寧可餓死，也不接受侮辱性的幫助。</div></div></div>
+<h4 class="idiom-group">補充相關成語</h4>
+<div class="idiom-card"><span class="idiom-no">21</span><div class="idiom-body"><div class="idiom-term">為人作嫁</div><div class="idiom-def">為別人作嫁衣裳，比喻徒然為他人辛苦。</div></div></div>
+<div class="idiom-card"><span class="idiom-no">22</span><div class="idiom-body"><div class="idiom-term">指鹿為馬</div><div class="idiom-def">比喻顛倒是非。</div></div></div>
+</div>
+</div>
+<h3>成語練習</h3>
+<p class="note">以下題目不計入分數。</p>
 <ol class="qs">
-<li class="q"><div class="stem">客人認為畫什麼「最難」？</div><ul class="opts"><li><span class="lab">(A)</span> 鬼魅</li><li><span class="lab">(B)</span> 犬馬</li><li><span class="lab">(C)</span> 山水</li><li><span class="lab">(D)</span> 花鳥</li></ul></li>
-<li class="q"><div class="stem">客人認為畫什麼「最易」？</div><ul class="opts"><li><span class="lab">(A)</span> 犬馬</li><li><span class="lab">(B)</span> 人物</li><li><span class="lab">(C)</span> 鬼魅</li><li><span class="lab">(D)</span> 蟲魚</li></ul></li>
-<li class="q"><div class="stem">犬馬之所以難畫，是因為：</div><ul class="opts"><li><span class="lab">(A)</span> 顏色太多</li><li><span class="lab">(B)</span> 人人都熟悉牠們的樣子，難以只求形似</li><li><span class="lab">(C)</span> 體型太大</li><li><span class="lab">(D)</span> 會動不易觀察</li></ul></li>
-<li class="q"><div class="stem">鬼魅之所以易畫，關鍵在於：</div><ul class="opts"><li><span class="lab">(A)</span> 顏色鮮豔</li><li><span class="lab">(B)</span> 沒有固定形體，不會出現在眼前供人比對</li><li><span class="lab">(C)</span> 筆畫簡單</li><li><span class="lab">(D)</span> 前人已有範本</li></ul></li>
+<li class="q" data-a="A" data-sec="id" data-pts="0"><div class="stem">有人天馬行空地虛構情節，卻對眼前真實的事物視而不見，正符合下列何句？</div><ul class="opts"><li><span class="lab">(A)</span> 畫鬼容易畫人難</li><li><span class="lab">(B)</span> 一舉兩得</li><li><span class="lab">(C)</span> 嗟來之食</li><li><span class="lab">(D)</span> 弦歌不輟</li></ul></li>
+<li class="q" data-a="A" data-sec="id" data-pts="0"><div class="stem">老師僅僅一字之改，就讓詩句意境大不相同，這樣的老師可稱為？</div><ul class="opts"><li><span class="lab">(A)</span> 一字之師</li><li><span class="lab">(B)</span> 一舉兩得</li><li><span class="lab">(C)</span> 東施效顰</li><li><span class="lab">(D)</span> 肥水不落外人田</li></ul></li>
+<li class="q" data-a="B" data-sec="id" data-pts="0"><div class="stem">她盲目模仿偶像的穿搭，卻毫無自己的風格，反而更顯突兀，這正是哪個成語所形容的？</div><ul class="opts"><li><span class="lab">(A)</span> 暴虎馮河</li><li><span class="lab">(B)</span> 東施效顰</li><li><span class="lab">(C)</span> 一舉兩得</li><li><span class="lab">(D)</span> 嗟來之食</li></ul></li>
+<li class="q" data-a="A" data-sec="id" data-pts="0"><div class="stem">他不靠任何裝備，就想徒手挑戰懸崖，眾人都說他太＿＿了。</div><ul class="opts"><li><span class="lab">(A)</span> 暴虎馮河</li><li><span class="lab">(B)</span> 畫龍點睛</li><li><span class="lab">(C)</span> 一字之師</li><li><span class="lab">(D)</span> 弦歌不輟</li></ul></li>
+<li class="q" data-a="A" data-sec="id" data-pts="0"><div class="stem">他寧死也不願接受帶有侮辱意味的施捨，這樣的氣節典故出自於？</div><ul class="opts"><li><span class="lab">(A)</span> 嗟來之食</li><li><span class="lab">(B)</span> 一舉兩得</li><li><span class="lab">(C)</span> 東施效顰</li><li><span class="lab">(D)</span> 暴虎馮河</li></ul></li>
 </ol>
-<p class="sec-score" data-sec="l61"></p>
-<h3 class="lesson">第62課　一字師<small>　《五代史補》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">齊己原本的詩句是「前村深雪裡，昨夜＿枝開」？</div><ul class="opts"><li><span class="lab">(A)</span> 一</li><li><span class="lab">(B)</span> 數</li><li><span class="lab">(C)</span> 數十</li><li><span class="lab">(D)</span> 滿</li></ul></li>
-<li class="q"><div class="stem">齊己聽了鄭谷的建議後，反應是？</div><ul class="opts"><li><span class="lab">(A)</span> 生氣反駁，不肯接受</li><li><span class="lab">(B)</span> 十分驚喜，忍不住行禮拜謝</li><li><span class="lab">(C)</span> 毫不在意，沒有回應</li><li><span class="lab">(D)</span> 立刻離開，不再往來</li></ul></li>
-<li class="q"><div class="stem">鄭谷認為改成「一枝開」較好，理由是：</div><ul class="opts"><li><span class="lab">(A)</span> 字形較美</li><li><span class="lab">(B)</span> 「一枝」才更能表現「早」開之意</li><li><span class="lab">(C)</span> 音韻較順</li><li><span class="lab">(D)</span> 筆畫較少</li></ul></li>
-<li class="q"><div class="stem">林逋〈山園小梅〉「疏影橫斜水清淺，暗香浮動月黃昏」所描寫的意境是？</div><ul class="opts"><li><span class="lab">(A)</span> 梅影橫斜映水中，梅香在月色下幽幽飄散，清幽脫俗</li><li><span class="lab">(B)</span> 梅花凋謝滿地，一片蕭瑟</li><li><span class="lab">(C)</span> 大雪紛飛，梅花凍僵</li><li><span class="lab">(D)</span> 賓客雲集賞梅，熱鬧非凡</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l62"></p>
-<h3 class="lesson">第63課　楚弓楚得<small>　《說苑》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">「楚弓楚得」這句話比喻什麼？</div><ul class="opts"><li><span class="lab">(A)</span> 東西雖然遺失，仍在自己人手中，不須計較</li><li><span class="lab">(B)</span> 做事要謹慎小心，考慮周全</li><li><span class="lab">(C)</span> 勇於認錯、知過能改的精神</li><li><span class="lab">(D)</span> 知恩圖報，禮尚往來</li></ul></li>
-<li class="q"><div class="stem">楚共王對遺失弓的態度是：</div><ul class="opts"><li><span class="lab">(A)</span> 派人到別國尋找</li><li><span class="lab">(B)</span> 不用找了，楚人失、楚人得</li><li><span class="lab">(C)</span> 非常憤怒</li><li><span class="lab">(D)</span> 要求侍從賠償</li></ul></li>
-<li class="q"><div class="stem">孔子認為楚共王「惜乎其不大也」，意思是：</div><ul class="opts"><li><span class="lab">(A)</span> 可惜他不夠高大</li><li><span class="lab">(B)</span> 可惜他的胸襟不夠廣大、私心未除</li><li><span class="lab">(C)</span> 可惜他不夠有錢</li><li><span class="lab">(D)</span> 可惜他年紀太小</li></ul></li>
-<li class="q"><div class="stem">孔子主張應該怎麼說，才是真正的大公無私？</div><ul class="opts"><li><span class="lab">(A)</span> 楚人遺弓，楚人得之</li><li><span class="lab">(B)</span> 人遺弓，人得之</li><li><span class="lab">(C)</span> 王遺弓，王得之</li><li><span class="lab">(D)</span> 各憑本事，誰撿歸誰</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l63"></p>
-<h3 class="lesson">第64課　醜女效顰<small>　《莊子》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">西施皺眉頭的原因是：</div><ul class="opts"><li><span class="lab">(A)</span> 心口疼痛</li><li><span class="lab">(B)</span> 刻意扮美</li><li><span class="lab">(C)</span> 生氣</li><li><span class="lab">(D)</span> 害羞</li></ul></li>
-<li class="q"><div class="stem">醜人模仿西施的舉動是：</div><ul class="opts"><li><span class="lab">(A)</span> 捧心而顰</li><li><span class="lab">(B)</span> 微笑揮手</li><li><span class="lab">(C)</span> 披頭散髮</li><li><span class="lab">(D)</span> 穿華服出門</li></ul></li>
-<li class="q"><div class="stem">富人和貧人見到醜人模仿後的反應是：</div><ul class="opts"><li><span class="lab">(A)</span> 紛紛稱讚</li><li><span class="lab">(B)</span> 閉門不出／帶家人躲避</li><li><span class="lab">(C)</span> 上前請教</li><li><span class="lab">(D)</span> 毫無反應</li></ul></li>
-<li class="q"><div class="stem">本文最終要說明的道理是：</div><ul class="opts"><li><span class="lab">(A)</span> 西施最美</li><li><span class="lab">(B)</span> 醜人也可以變美</li><li><span class="lab">(C)</span> 只學表面、不知其所以然，反而弄巧成拙</li><li><span class="lab">(D)</span> 鄉里人沒有審美觀</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l64"></p>
-<h3 class="lesson">第65課　宣王好射<small>　《呂氏春秋》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">齊宣王實際使用的弓力是多少石？</div><ul class="opts"><li><span class="lab">(A)</span> 三石</li><li><span class="lab">(B)</span> 六石</li><li><span class="lab">(C)</span> 九石</li><li><span class="lab">(D)</span> 十二石</li></ul></li>
-<li class="q"><div class="stem">左右侍從故意拉弓「中關而止」的目的是：</div><ul class="opts"><li><span class="lab">(A)</span> 體力不夠</li><li><span class="lab">(B)</span> 刻意奉承宣王，讓他誤以為弓力驚人</li><li><span class="lab">(C)</span> 弓有瑕疵</li><li><span class="lab">(D)</span> 天氣太熱</li></ul></li>
-<li class="q"><div class="stem">宣王「終身自以為九石」，反映出他：</div><ul class="opts"><li><span class="lab">(A)</span> 謙虛謹慎</li><li><span class="lab">(B)</span> 被奉承蒙蔽，看不清事實真相</li><li><span class="lab">(C)</span> 武藝高強</li><li><span class="lab">(D)</span> 不喜歡射箭</li></ul></li>
-<li class="q"><div class="stem">本文作者以「豈不悲哉」作結，用意在：</div><ul class="opts"><li><span class="lab">(A)</span> 讚美宣王的臂力</li><li><span class="lab">(B)</span> 感嘆世人常安於虛名，不願面對真相</li><li><span class="lab">(C)</span> 描寫射箭技巧</li><li><span class="lab">(D)</span> 介紹弓的種類</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l65"></p>
-<h3 class="lesson">第66課　王勃腹稿<small>　《初潭集》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">王勃寫文章前的習慣是：</div><ul class="opts"><li><span class="lab">(A)</span> 先散步構思</li><li><span class="lab">(B)</span> 先磨墨、暢飲，蒙頭而睡</li><li><span class="lab">(C)</span> 先請教老師</li><li><span class="lab">(D)</span> 先查閱古書</li></ul></li>
-<li class="q"><div class="stem">「腹稿」的意思是：</div><ul class="opts"><li><span class="lab">(A)</span> 寫在腹部的草稿</li><li><span class="lab">(B)</span> 事先在心中構思好，動筆便一氣呵成</li><li><span class="lab">(C)</span> 請人代筆的文章</li><li><span class="lab">(D)</span> 反覆修改多次的文章</li></ul></li>
-<li class="q"><div class="stem">「不易一字」形容王勃寫作：</div><ul class="opts"><li><span class="lab">(A)</span> 字跡潦草</li><li><span class="lab">(B)</span> 文思泉湧、一氣呵成、不必修改</li><li><span class="lab">(C)</span> 字數很少</li><li><span class="lab">(D)</span> 常抄襲古人</li></ul></li>
-<li class="q"><div class="stem">「心織舌耕」是形容王勃：</div><ul class="opts"><li><span class="lab">(A)</span> 擅長織布刺繡</li><li><span class="lab">(B)</span> 文思巧妙，靠寫作維生如同耕作般辛勤豐收</li><li><span class="lab">(C)</span> 口才極差</li><li><span class="lab">(D)</span> 不擅寫作</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l66"></p>
-<h3 class="lesson">第67課　一舉兩得<small>　《戰國策》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">兩隻老虎打鬥的原因是：</div><ul class="opts"><li><span class="lab">(A)</span> 爭奪地盤</li><li><span class="lab">(B)</span> 爭食同一個人</li><li><span class="lab">(C)</span> 爭配偶</li><li><span class="lab">(D)</span> 互相報復</li></ul></li>
-<li class="q"><div class="stem">有人建議管莊子怎麼做，才是聰明的策略？</div><ul class="opts"><li><span class="lab">(A)</span> 立刻上前刺殺兩虎</li><li><span class="lab">(B)</span> 等兩虎相鬥兩敗俱傷後，再刺殺受傷的老虎</li><li><span class="lab">(C)</span> 放棄不管</li><li><span class="lab">(D)</span> 找人幫忙一起攻擊</li></ul></li>
-<li class="q"><div class="stem">這樣做的好處是：</div><ul class="opts"><li><span class="lab">(A)</span> 可以省下力氣，一次獲得殺死兩虎的美名</li><li><span class="lab">(B)</span> 可以馴養老虎</li><li><span class="lab">(C)</span> 可以避免受傷</li><li><span class="lab">(D)</span> 可以讓兩虎和解</li></ul></li>
-<li class="q"><div class="stem">本文所說明的策略近似於哪一句成語？</div><ul class="opts"><li><span class="lab">(A)</span> 坐收漁翁之利</li><li><span class="lab">(B)</span> 亡羊補牢</li><li><span class="lab">(C)</span> 畫蛇添足</li><li><span class="lab">(D)</span> 刻舟求劍</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l67"></p>
-<h3 class="lesson">第68課　割雞焉用牛刀<small>　《論語》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">孔子到武城「莞爾而笑」，是因為聽到了什麼聲音？</div><ul class="opts"><li><span class="lab">(A)</span> 哭泣聲</li><li><span class="lab">(B)</span> 弦歌之聲</li><li><span class="lab">(C)</span> 爭吵聲</li><li><span class="lab">(D)</span> 鑼鼓聲</li></ul></li>
-<li class="q"><div class="stem">孔子「割雞焉用牛刀」的言外之意是：</div><ul class="opts"><li><span class="lab">(A)</span> 治理小地方，何必大費周章用禮樂教化</li><li><span class="lab">(B)</span> 武城的雞很難殺</li><li><span class="lab">(C)</span> 子游沒有牛刀</li><li><span class="lab">(D)</span> 子游太浪費食材</li></ul></li>
-<li class="q"><div class="stem">子游引述孔子教誨「君子學道則愛人，小人學道則易使也」，說明的是：</div><ul class="opts"><li><span class="lab">(A)</span> 禮樂教化對上下位者皆有益處</li><li><span class="lab">(B)</span> 只有君子需要學習</li><li><span class="lab">(C)</span> 小人不必學習</li><li><span class="lab">(D)</span> 音樂沒有教化功能</li></ul></li>
-<li class="q"><div class="stem">孔子最後說「前言戲之耳」，顯示他：</div><ul class="opts"><li><span class="lab">(A)</span> 收回自己的玩笑話，肯定子游做法正確</li><li><span class="lab">(B)</span> 真心認為子游做錯了</li><li><span class="lab">(C)</span> 生氣責備子游</li><li><span class="lab">(D)</span> 後悔到武城</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l68"></p>
-<h3 class="lesson">第69課　石學士<small>　《冷齋夜話》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">石曼卿墜馬的原因是：</div><ul class="opts"><li><span class="lab">(A)</span> 自己不小心</li><li><span class="lab">(B)</span> 馬夫失控，馬受驚</li><li><span class="lab">(C)</span> 路面濕滑</li><li><span class="lab">(D)</span> 遭人陷害</li></ul></li>
-<li class="q"><div class="stem">旁人扶起石曼卿時，內心擔心的是：</div><ul class="opts"><li><span class="lab">(A)</span> 他會生氣責怪</li><li><span class="lab">(B)</span> 他會大笑</li><li><span class="lab">(C)</span> 他會立刻離開</li><li><span class="lab">(D)</span> 他會要求賠償</li></ul></li>
-<li class="q"><div class="stem">石曼卿「賴我石學士，若他人皮骨已損矣」這句話展現他：</div><ul class="opts"><li><span class="lab">(A)</span> 自誇武藝高強</li><li><span class="lab">(B)</span> 幽默自嘲，化解尷尬場面</li><li><span class="lab">(C)</span> 責怪馬夫</li><li><span class="lab">(D)</span> 誇耀自己身分尊貴</li></ul></li>
-<li class="q"><div class="stem">市人「皆稱幸」，稱幸的原因最可能是：</div><ul class="opts"><li><span class="lab">(A)</span> 慶幸馬沒有受傷</li><li><span class="lab">(B)</span> 佩服石曼卿幽默的胸襟、化險為夷</li><li><span class="lab">(C)</span> 慶幸自己沒被波及</li><li><span class="lab">(D)</span> 慶幸寺廟沒有損壞</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l69"></p>
-<h3 class="lesson">第70課　嗟來之食<small>　《禮記．檀弓》</small></h3>
-<ol class="qs">
-<li class="q"><div class="stem">黔敖準備食物的背景是：</div><ul class="opts"><li><span class="lab">(A)</span> 慶祝豐收</li><li><span class="lab">(B)</span> 齊國發生嚴重饑荒</li><li><span class="lab">(C)</span> 招待貴賓</li><li><span class="lab">(D)</span> 祭祀祖先</li></ul></li>
-<li class="q"><div class="stem">黔敖呼喚饑餓者的方式，讓對方感到：</div><ul class="opts"><li><span class="lab">(A)</span> 備受尊重</li><li><span class="lab">(B)</span> 帶有輕蔑、施捨式的口氣，令人不悅</li><li><span class="lab">(C)</span> 非常親切</li><li><span class="lab">(D)</span> 毫無感覺</li></ul></li>
-<li class="q"><div class="stem">饑餓者「終不食而死」，顯示他重視的是：</div><ul class="opts"><li><span class="lab">(A)</span> 食物的美味</li><li><span class="lab">(B)</span> 個人的尊嚴，不願接受侮辱性的施捨</li><li><span class="lab">(C)</span> 黔敖的身分地位</li><li><span class="lab">(D)</span> 食物的份量</li></ul></li>
-<li class="q"><div class="stem">「嗟來之食」後來用來比喻：</div><ul class="opts"><li><span class="lab">(A)</span> 豐盛的宴席</li><li><span class="lab">(B)</span> 帶有侮辱性質的施捨</li><li><span class="lab">(C)</span> 自己種植的食物</li><li><span class="lab">(D)</span> 皇帝賞賜的食物</li></ul></li>
-</ol>
-<p class="sec-score" data-sec="l70"></p>
 </section>
 <section id="answers">
 <h2 class="newpage">參考答案與解析</h2>
-
-<h3>壹、虛字練習（「為」、「謝」）</h3><div class="tablewrap"><table class="key"><thead><tr><th>題號</th><th>答案</th><th>解析</th></tr></thead><tbody><tr><td class="c">1</td><td class="c ans">A</td><td>為：介詞，因為；「項為之強」意指頸項因此而僵硬。</td></tr><tr><td class="c">2</td><td class="c ans">B</td><td>為：介詞，替；為人民服務。</td></tr><tr><td class="c">3</td><td class="c ans">B</td><td>為：介詞，與、同；理念不同的人不必互相商議謀劃。</td></tr><tr><td class="c">4</td><td class="c ans">A</td><td>為：介詞，對、向；不值得對外人說起。</td></tr><tr><td class="c">5</td><td class="c ans">B</td><td>為：動詞，做、行；事情的成敗操之在人。</td></tr><tr><td class="c">6</td><td class="c ans">C</td><td>為：動詞，治理；以道德來治理國政。</td></tr><tr><td class="c">7</td><td class="c ans">A</td><td>為：動詞，當作；把土石突起的地方當作山丘。</td></tr><tr><td class="c">8</td><td class="c ans">B</td><td>為：動詞，擔任；子游擔任武城的地方官。</td></tr><tr><td class="c">9</td><td class="c ans">B</td><td>為：介詞，表被動，被；兩隻小蟲都被吞掉了。</td></tr><tr><td class="c">10</td><td class="c ans">A</td><td>為：動詞，當作、作為；比喻顛倒是非。</td></tr><tr><td class="c">11</td><td class="c ans">C</td><td>為：動詞，是；失敗是成功的根源。</td></tr><tr><td class="c">12</td><td class="c ans">B</td><td>謝：推卻、拒絕；關起門來不接見賓客。</td></tr><tr><td class="c">13</td><td class="c ans">B</td><td>謝：賠罪、認錯；明天一早不能不親自來向項王道歉。</td></tr><tr><td class="c">14</td><td class="c ans">B</td><td>謝：詢問、問候；使君向羅敷詢問。</td></tr><tr><td class="c">15</td><td class="c ans">A</td><td>謝：替代、更換；新舊事物交替。</td></tr></tbody></table></div>
-<h3>貳、成語練習</h3><div class="tablewrap"><table class="key"><thead><tr><th>題號</th><th>答案</th><th>解析</th></tr></thead><tbody><tr><td class="c">1</td><td class="c ans">A</td><td>畫鬼容易畫人難：虛構或沒人見過的事物容易描繪，而真實且熟悉的事物需要極深的功底才能精準呈現。</td></tr><tr><td class="c">2</td><td class="c ans">A</td><td>一字之師：能指點一字之誤，使詩文更臻完美的人。</td></tr><tr><td class="c">3</td><td class="c ans">B</td><td>東施效顰：不衡量自身條件而一味模仿他人，反而弄巧成拙。</td></tr><tr><td class="c">4</td><td class="c ans">A</td><td>暴虎馮河：徒手搏虎、徒步渡河，比喻人有勇而無謀。</td></tr><tr><td class="c">5</td><td class="c ans">A</td><td>嗟來之食：帶有輕蔑、侮辱性質的施捨；比喻寧可餓死，也不接受侮辱性的幫助。</td></tr></tbody></table></div>
-<h3>參、課文選擇題（題號：課次－題號）</h3><div class="tablewrap"><table class="key"><thead><tr><th>題號（課次－題號）</th><th>答案</th><th>解析</th></tr></thead><tbody><tr><td class="c">61－1</td><td class="c ans">B</td><td>「犬馬最難」，因為人人都熟悉牠們的樣子。</td></tr><tr><td class="c">61－2</td><td class="c ans">C</td><td>「鬼魅最易」，因為沒有固定形體。</td></tr><tr><td class="c">61－3</td><td class="c ans">B</td><td>「人所知也，旦暮罄於前，不可類之，故難」。</td></tr><tr><td class="c">61－4</td><td class="c ans">B</td><td>「無形者，不罄於前，故易之也」。</td></tr><tr><td class="c">62－1</td><td class="c ans">B</td><td>原句為「昨夜數枝開」。</td></tr><tr><td class="c">62－2</td><td class="c ans">B</td><td>「齊己矍然，不覺兼三禮拜」，齊己聽了十分驚喜，忍不住多次行禮。</td></tr><tr><td class="c">62－3</td><td class="c ans">B</td><td>「數枝非早也，未若一枝佳」，一枝才顯出早梅的珍稀。</td></tr><tr><td class="c">62－4</td><td class="c ans">A</td><td>此句以疏淡的梅影、朦朧的月色、幽幽的暗香，寫出梅花清幽脫俗的意境，是詠梅千古名句。</td></tr><tr><td class="c">63－1</td><td class="c ans">A</td><td>楚人遺失弓，仍是楚人撿到，比喻東西雖失卻仍在自己人手中，不必過於計較得失。</td></tr><tr><td class="c">63－2</td><td class="c ans">B</td><td>「止！楚人遺弓，楚人得之，又何求焉」。</td></tr><tr><td class="c">63－3</td><td class="c ans">B</td><td>孔子認為楚共王仍以「楚」自限，胸襟未臻公正無私。</td></tr><tr><td class="c">63－4</td><td class="c ans">B</td><td>孔子認為應去除「楚」的界線，說「人遺弓，人得之」。</td></tr><tr><td class="c">64－1</td><td class="c ans">A</td><td>「西施病心而顰其里」。</td></tr><tr><td class="c">64－2</td><td class="c ans">A</td><td>「歸亦捧心而顰其里」。</td></tr><tr><td class="c">64－3</td><td class="c ans">B</td><td>「富人見之，堅閉門而不出；貧人見之，挈妻子而去之走」。</td></tr><tr><td class="c">64－4</td><td class="c ans">C</td><td>「彼知顰美，而不知顰之所以美」。</td></tr><tr><td class="c">65－1</td><td class="c ans">A</td><td>「其實所用不過三石」。</td></tr><tr><td class="c">65－2</td><td class="c ans">B</td><td>拉到一半就停，故意誇大說「此不下九石」以討好宣王。</td></tr><tr><td class="c">65－3</td><td class="c ans">B</td><td>宣王被身邊人奉承所矇騙，終身不知真相。</td></tr><tr><td class="c">65－4</td><td class="c ans">B</td><td>藉宣王之事諷刺世人易被虛名蒙蔽，不願面對真相。</td></tr><tr><td class="c">66－1</td><td class="c ans">B</td><td>「必先磨墨數升，則酣飲，引被覆面而臥」。</td></tr><tr><td class="c">66－2</td><td class="c ans">B</td><td>「及寤，援筆成篇，不易一字，時人謂之腹稿」。</td></tr><tr><td class="c">66－3</td><td class="c ans">B</td><td>提筆一氣呵成，一個字都不必修改。</td></tr><tr><td class="c">66－4</td><td class="c ans">B</td><td>心織舌耕：比喻王勃靠寫作維生，才思猶如耕作般勤奮而豐收。</td></tr><tr><td class="c">67－1</td><td class="c ans">B</td><td>「有兩虎爭人而鬥者」。</td></tr><tr><td class="c">67－2</td><td class="c ans">B</td><td>「子待傷虎而刺之，則是一舉而兩虎之名」。</td></tr><tr><td class="c">67－3</td><td class="c ans">A</td><td>小者必死、大者必傷，此時再出手最省力、獲利最大。</td></tr><tr><td class="c">67－4</td><td class="c ans">A</td><td>等雙方兩敗俱傷後再介入得利，近似「坐收漁翁之利」。</td></tr><tr><td class="c">68－1</td><td class="c ans">B</td><td>「子之武城，聞弦歌之聲」。</td></tr><tr><td class="c">68－2</td><td class="c ans">A</td><td>孔子開玩笑說治理小小的武城不必如此大費周章。</td></tr><tr><td class="c">68－3</td><td class="c ans">A</td><td>無論在上位或在下位，學習禮樂都有益處。</td></tr><tr><td class="c">68－4</td><td class="c ans">A</td><td>孔子肯定「偃之言是也」，笑稱剛才只是開玩笑。</td></tr><tr><td class="c">69－1</td><td class="c ans">B</td><td>「馭者失控，馬驚，曼卿墜於地」。</td></tr><tr><td class="c">69－2</td><td class="c ans">A</td><td>「左右驚扶，恐曼卿有慍色」。</td></tr><tr><td class="c">69－3</td><td class="c ans">B</td><td>以幽默自嘲的口吻化解眾人的擔憂。</td></tr><tr><td class="c">69－4</td><td class="c ans">B</td><td>眾人佩服曼卿豁達幽默、能自我解嘲。</td></tr><tr><td class="c">70－1</td><td class="c ans">B</td><td>「齊大饑，黔敖為食於路」。</td></tr><tr><td class="c">70－2</td><td class="c ans">B</td><td>「嗟！來食！」的口氣帶有輕蔑意味。</td></tr><tr><td class="c">70－3</td><td class="c ans">B</td><td>「予唯不食嗟來之食，以至於斯也」，寧死不失尊嚴。</td></tr><tr><td class="c">70－4</td><td class="c ans">B</td><td>指帶有輕蔑、侮辱性質的施捨。</td></tr></tbody></table></div>
+<details class="answers"><summary>顯示參考答案與解析（老師用）</summary>
+<h3>壹、虛字練習</h3><div class="tablewrap"><table class="key"><thead><tr><th>題號</th><th>答案</th><th>解析</th></tr></thead><tbody>
+<tr><td class="c">1</td><td class="c ans">A</td><td>為：介詞，因為；「項為之強」意指頸項因此而僵硬。</td></tr>
+<tr><td class="c">2</td><td class="c ans">B</td><td>為：介詞，替；為人民服務。</td></tr>
+<tr><td class="c">3</td><td class="c ans">B</td><td>為：介詞，與、同；理念不同的人不必互相商議謀劃。</td></tr>
+<tr><td class="c">4</td><td class="c ans">A</td><td>為：介詞，對、向；不值得對外人說起。</td></tr>
+<tr><td class="c">5</td><td class="c ans">B</td><td>為：動詞，做、行；事情的成敗操之在人。</td></tr>
+<tr><td class="c">6</td><td class="c ans">C</td><td>為：動詞，治理；以道德來治理國政。</td></tr>
+<tr><td class="c">7</td><td class="c ans">A</td><td>為：動詞，當作；把土石突起的地方當作山丘。</td></tr>
+<tr><td class="c">8</td><td class="c ans">B</td><td>為：動詞，擔任；子游擔任武城的地方官。</td></tr>
+<tr><td class="c">9</td><td class="c ans">B</td><td>為：介詞，表被動，被；兩隻小蟲都被吞掉了。</td></tr>
+<tr><td class="c">10</td><td class="c ans">A</td><td>為：動詞，當作、作為；比喻顛倒是非。</td></tr>
+<tr><td class="c">11</td><td class="c ans">C</td><td>為：動詞，是；失敗是成功的根源。</td></tr>
+<tr><td class="c">12</td><td class="c ans">B</td><td>謝：推卻、拒絕；關起門來不接見賓客。</td></tr>
+<tr><td class="c">13</td><td class="c ans">B</td><td>謝：賠罪、認錯；明天一早不能不親自來向項王道歉。</td></tr>
+<tr><td class="c">14</td><td class="c ans">B</td><td>謝：詢問、問候；使君向羅敷詢問。</td></tr>
+<tr><td class="c">15</td><td class="c ans">A</td><td>謝：替代、更換；新舊事物交替。</td></tr>
+</tbody></table></div>
+<h3>貳、課文選擇題（題號：課次－題號）</h3><div class="tablewrap"><table class="key"><thead><tr><th>題號</th><th>答案</th><th>解析</th></tr></thead><tbody>
+<tr><td class="c">61－1</td><td class="c ans">B</td><td>「犬馬最難」，因為人人都熟悉牠們的樣子。</td></tr>
+<tr><td class="c">61－2</td><td class="c ans">C</td><td>「鬼魅最易」，因為沒有固定形體。</td></tr>
+<tr><td class="c">61－3</td><td class="c ans">B</td><td>「人所知也，旦暮罄於前，不可類之，故難」。</td></tr>
+<tr><td class="c">61－4</td><td class="c ans">B</td><td>「無形者，不罄於前，故易之也」。</td></tr>
+<tr><td class="c">62－1</td><td class="c ans">B</td><td>原句為「昨夜數枝開」。</td></tr>
+<tr><td class="c">62－2</td><td class="c ans">B</td><td>「齊己矍然，不覺兼三禮拜」，齊己聽了十分驚喜，忍不住多次行禮。</td></tr>
+<tr><td class="c">62－3</td><td class="c ans">B</td><td>「數枝非早也，未若一枝佳」，一枝才顯出早梅的珍稀。</td></tr>
+<tr><td class="c">62－4</td><td class="c ans">A</td><td>此句以疏淡的梅影、朦朧的月色、幽幽的暗香，寫出梅花清幽脫俗的意境，是詠梅千古名句。</td></tr>
+<tr><td class="c">63－1</td><td class="c ans">A</td><td>楚人遺失弓，仍是楚人撿到，比喻東西雖失卻仍在自己人手中，不必過於計較得失。</td></tr>
+<tr><td class="c">63－2</td><td class="c ans">B</td><td>「止！楚人遺弓，楚人得之，又何求焉」。</td></tr>
+<tr><td class="c">63－3</td><td class="c ans">B</td><td>孔子認為楚共王仍以「楚」自限，胸襟未臻公正無私。</td></tr>
+<tr><td class="c">63－4</td><td class="c ans">B</td><td>孔子認為應去除「楚」的界線，說「人遺弓，人得之」。</td></tr>
+<tr><td class="c">64－1</td><td class="c ans">A</td><td>「西施病心而顰其里」。</td></tr>
+<tr><td class="c">64－2</td><td class="c ans">A</td><td>「歸亦捧心而顰其里」。</td></tr>
+<tr><td class="c">64－3</td><td class="c ans">B</td><td>「富人見之，堅閉門而不出；貧人見之，挈妻子而去之走」。</td></tr>
+<tr><td class="c">64－4</td><td class="c ans">C</td><td>「彼知顰美，而不知顰之所以美」。</td></tr>
+<tr><td class="c">65－1</td><td class="c ans">A</td><td>「其實所用不過三石」。</td></tr>
+<tr><td class="c">65－2</td><td class="c ans">B</td><td>拉到一半就停，故意誇大說「此不下九石」以討好宣王。</td></tr>
+<tr><td class="c">65－3</td><td class="c ans">B</td><td>宣王被身邊人奉承所矇騙，終身不知真相。</td></tr>
+<tr><td class="c">65－4</td><td class="c ans">B</td><td>藉宣王之事諷刺世人易被虛名蒙蔽，不願面對真相。</td></tr>
+<tr><td class="c">66－1</td><td class="c ans">B</td><td>「必先磨墨數升，則酣飲，引被覆面而臥」。</td></tr>
+<tr><td class="c">66－2</td><td class="c ans">B</td><td>「及寤，援筆成篇，不易一字，時人謂之腹稿」。</td></tr>
+<tr><td class="c">66－3</td><td class="c ans">B</td><td>提筆一氣呵成，一個字都不必修改。</td></tr>
+<tr><td class="c">66－4</td><td class="c ans">B</td><td>心織舌耕：比喻王勃靠寫作維生，才思猶如耕作般勤奮而豐收。</td></tr>
+<tr><td class="c">67－1</td><td class="c ans">B</td><td>「有兩虎爭人而鬥者」。</td></tr>
+<tr><td class="c">67－2</td><td class="c ans">B</td><td>「子待傷虎而刺之，則是一舉而兩虎之名」。</td></tr>
+<tr><td class="c">67－3</td><td class="c ans">A</td><td>小者必死、大者必傷，此時再出手最省力、獲利最大。</td></tr>
+<tr><td class="c">67－4</td><td class="c ans">A</td><td>等雙方兩敗俱傷後再介入得利，近似「坐收漁翁之利」。</td></tr>
+<tr><td class="c">68－1</td><td class="c ans">B</td><td>「子之武城，聞弦歌之聲」。</td></tr>
+<tr><td class="c">68－2</td><td class="c ans">A</td><td>孔子開玩笑說治理小小的武城不必如此大費周章。</td></tr>
+<tr><td class="c">68－3</td><td class="c ans">A</td><td>無論在上位或在下位，學習禮樂都有益處。</td></tr>
+<tr><td class="c">68－4</td><td class="c ans">A</td><td>孔子肯定「偃之言是也」，笑稱剛才只是開玩笑。</td></tr>
+<tr><td class="c">69－1</td><td class="c ans">B</td><td>「馭者失控，馬驚，曼卿墜於地」。</td></tr>
+<tr><td class="c">69－2</td><td class="c ans">A</td><td>「左右驚扶，恐曼卿有慍色」。</td></tr>
+<tr><td class="c">69－3</td><td class="c ans">B</td><td>以幽默自嘲的口吻化解眾人的擔憂。</td></tr>
+<tr><td class="c">69－4</td><td class="c ans">B</td><td>眾人佩服曼卿豁達幽默、能自我解嘲。</td></tr>
+<tr><td class="c">70－1</td><td class="c ans">B</td><td>「齊大饑，黔敖為食於路」。</td></tr>
+<tr><td class="c">70－2</td><td class="c ans">B</td><td>「嗟！來食！」的口氣帶有輕蔑意味。</td></tr>
+<tr><td class="c">70－3</td><td class="c ans">B</td><td>「予唯不食嗟來之食，以至於斯也」，寧死不失尊嚴。</td></tr>
+<tr><td class="c">70－4</td><td class="c ans">B</td><td>指帶有輕蔑、侮辱性質的施捨。</td></tr>
+</tbody></table></div>
+<h3>參、成語練習</h3><div class="tablewrap"><table class="key"><thead><tr><th>題號</th><th>答案</th><th>解析</th></tr></thead><tbody>
+<tr><td class="c">1</td><td class="c ans">A</td><td>畫鬼容易畫人難：虛構或沒人見過的事物容易描繪，而真實且熟悉的事物需要極深的功底才能精準呈現。</td></tr>
+<tr><td class="c">2</td><td class="c ans">A</td><td>一字之師：能指點一字之誤，使詩文更臻完美的人。</td></tr>
+<tr><td class="c">3</td><td class="c ans">B</td><td>東施效顰：不衡量自身條件而一味模仿他人，反而弄巧成拙。</td></tr>
+<tr><td class="c">4</td><td class="c ans">A</td><td>暴虎馮河：徒手搏虎、徒步渡河，比喻人有勇而無謀。</td></tr>
+<tr><td class="c">5</td><td class="c ans">A</td><td>嗟來之食：帶有輕蔑、侮辱性質的施捨；比喻寧可餓死，也不接受侮辱性的幫助。</td></tr>
+</tbody></table></div>
+</details>
 </section>
-<footer>陳翠屏老師 國文科教材　東興國中</footer>
+<section id="downloads">
+<h2>下載 Word 檔</h2>
+<div class="dl-list">
+<a class="dl-card" href="古文今讀61-70.docx" download>
+<span class="dl-icon">📄</span>
+<span class="dl-text"><span class="dl-title">Word 檔</span><span class="dl-sub">虛字整理、課文、選擇題、成語（可列印）</span></span>
+</a>
+</div>
+</section>
+<footer>古文今讀 61–70 課　虛字整理與選擇題</footer>
 </main>
-
 </body>
 </html>
